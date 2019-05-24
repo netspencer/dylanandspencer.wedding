@@ -1,3 +1,5 @@
-# schoeben.wedding
-## I'm getting married!
+# dylanandspencer.wedding
+
+## We're getting married!
+
 May 24, 2020

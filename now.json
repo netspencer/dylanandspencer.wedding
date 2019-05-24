@@ -1,7 +1,7 @@
 {
   "version": 2,
   "name": "wedding",
-  "alias": "schoeben.wedding",
+  "alias": "dylanandspencer.wedding",
   "builds": [
     {
       "src": "./www/package.json",

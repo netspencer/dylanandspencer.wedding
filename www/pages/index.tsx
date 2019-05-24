@@ -4,7 +4,7 @@ import Head from 'next/head'
 export default () => (
   <>
     <Head>
-      <title>Schoeben Wedding | May 24, 2020</title>
+      <title>Dylan and Spencer's Wedding | May 24, 2020</title>
     </Head>
     <main className="vh-100 dt w-100">
       <div className="dtc v-mid tc">
