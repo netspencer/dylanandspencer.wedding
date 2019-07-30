@@ -1,0 +1,9 @@
+{
+  "files.exclude": {
+    ".cache": true,
+    ".gitignore": true,
+    ".vscode": true,
+    "dist": true,
+    "yarn.lock": true
+  }
+}

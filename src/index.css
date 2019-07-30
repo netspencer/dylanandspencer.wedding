@@ -1,0 +1,12 @@
+/* @import '@csstools/normalize.css/opinionated.css'; */
+
+body {
+  font-family: 'Hind', sans-serif;
+  /* background-image: url('../static/photoshoot/13.jpg'); */
+  /* background-size: cover; */
+}
+
+.step {
+  color: red;
+  height: 800px;
+}

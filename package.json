@@ -1,20 +1,21 @@
 {
   "name": "dylanandspencer.wedding",
   "version": "1.0.0",
-  "main": "index.js",
   "repository": "git@github.com:netspencer/dylanandspencer.wedding.git",
   "author": "Spencer Schoeben <spencer@netspencer.com>",
-  "license": "MIT",
   "scripts": {
-    "dev": "parcel index.html",
-    "build": "parcel build index.html"
+    "dev": "parcel src/index.html",
+    "build": "parcel build src/index.html"
   },
   "devDependencies": {
     "parcel-bundler": "^1.12.3",
     "typescript": "^3.5.3"
   },
   "dependencies": {
+    "@csstools/normalize.css": "^10.1.0",
     "autoprefixer": "^9.6.1",
-    "postcss-modules": "^1.4.1"
+    "intersection-observer": "^0.7.0",
+    "postcss-modules": "^1.4.1",
+    "scrollama": "^2.0.1"
   }
 }
