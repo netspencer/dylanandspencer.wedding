@@ -39,9 +39,11 @@ export default class Story {
       this.document.getElementById('postcard').style.visibility = 'visible'
       this.loadingAnimation.destroy()
       this.document.querySelector('body').classList.remove('overflow-hidden')
+      this.document.getElementById('loading-container').style.visibility =
+        'hidden'
       // setTimeout(() => {
-      //   window.scrollTo({ top: window.innerHeight })
-      // }, 500
+      //   this.window.scrollTo({ top: this.window.innerHeight })
+      // }, 500)
     }, 700)
   }
 }
