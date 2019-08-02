@@ -2,7 +2,7 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <title>Dylan & Spencer</title>
+    <title>Dylan &amp; Spencer | May 24, 2020</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <link
@@ -10,56 +10,81 @@
       href="https://unpkg.com/tachyons@4.10.0/css/tachyons.min.css"
     />
     <link
-      href="https://fonts.googleapis.com/css?family=Hind:400,700&display=swap"
+      href="https://fonts.googleapis.com/css?family=Abril+Fatface|Didact+Gothic|Libre+Baskerville&display=swap"
       rel="stylesheet"
     />
     <link rel="stylesheet" href="./index.css" />
+    <script>
+      document.documentElement.className = 'js'
+    </script>
   </head>
-  <body>
+  <body class="bg-wedding-cream overflow-hidden">
+    <section class="vh-100 w-100 dt absolute top-0 left-0 no-selection">
+      <div class="dtc v-mid">
+        <div id="loading-animation" class="w-50 center o-"></div>
+      </div>
+    </section>
+    <section class="vh-100 dt w-100 relative no-selection">
+      <div class="dtc v-mid tc">
+        <a id="postcard" href="#" class="tilter center tilter--2">
+          <figure class="tilter__figure">
+            <img
+              class="tilter__image"
+              src="../static/photoshoot/12.jpg"
+              alt="img03"
+            />
+            <div class="tilter__deco tilter__deco--shine"><div></div></div>
+            <figcaption class="tilter__caption tl absolute bottom-0 w-100 pa5">
+              <h3 class="fatface f-subheadline fw4 lh-title ma0 mb2">
+                May 24, 2020
+              </h3>
+              <p class="f3 didact ma0 lh-copy ">
+                Hummingbird Nest Ranch &bull; Simi Valley, CA
+              </p>
+            </figcaption>
+          </figure>
+        </a>
+      </div>
+    </section>
     <main class="relative">
-      <nav class="fixed top-0 db dt-l w-100 border-box pa3 ph5-l z-5">
+      <nav class="absolute top-0 db dt-l w-100 border-box pa3 ph5-l z-5 libre">
         <a
-          class="db dtc-l v-mid black link dim w-100 w-25-l tc tl-l mb2 mb0-l"
+          class="db dtc-l v-mid wedding-gray link dim w-100 w-25-l tc tl-l mb2 mb0-l"
           href="#"
           title="Home"
         >
-          <h1 class="f2 f1-l">Spencer & Dylan</h1>
+          <h1 class="fatface f2 f1-l">Spencer &amp; Dylan</h1>
         </a>
         <div class="db dtc-l v-mid w-100 w-75-l tc tr-l">
           <a
-            class="link dim black f5 f4-l dib mr3 mr4-l"
+            class="link dim wedding-gray f5 f4-l dib mr3 mr4-l"
             href="#"
             title="Our Story"
           >
             Our Story
           </a>
           <a
-            class="link dim black f5 f4-l dib mr3 mr4-l"
+            class="link dim wedding-gray f5 f4-l dib mr3 mr4-l"
             href="#"
             title="The Big Day"
           >
             The Big Day
           </a>
           <a
-            class="link dim black f5 f4-l dib mr3 mr4-l"
+            class="link dim wedding-gray f5 f4-l dib mr3 mr4-l"
             href="#"
             title="Gift Registry"
           >
             Gift Registry
           </a>
-          <a class="link dim black f5 f4-l dib" href="#" title="RSVP">RSVP</a>
+          <a class="link dim wedding-gray f5 f4-l dib" href="#" title="RSVP"
+            >RSVP</a
+          >
         </div>
       </nav>
-      <header class="mt4 vh-100 dt w-100">
+      <header class="vh-100 dt w-100">
         <div class="dtc v-mid tc white ph3 ph4-l">
-          <article class="center w-60 pt4">
-            <div class="aspect-ratio aspect-ratio--6x4 mb4">
-              <div
-                class="aspect-ratio--object cover"
-                style="background:url(http://mrmrs.github.io/photos/001.jpg) center;"
-              ></div>
-            </div>
-          </article>
+          <article class="center w-60 pt4"></article>
         </div>
       </header>
     </main>

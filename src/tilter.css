@@ -1,0 +1,68 @@
+.tilter {
+  position: relative;
+  display: block;
+  flex: none;
+  color: #fff;
+  /* width: 600px;
+  height: 400px;
+  perspective: 750px; */
+}
+
+.tilter * {
+  pointer-events: none;
+}
+
+.tilter:hover,
+.tilter:focus {
+  color: #fff;
+  outline: none;
+}
+
+.tilter__figure,
+.tilter__image {
+  display: block;
+  width: 100%;
+  height: 100%;
+  margin: 0;
+}
+
+.tilter__figure > * {
+  transform: translateZ(0px); /* Force correct stacking order */
+}
+
+.tilter__figure {
+  position: relative;
+}
+
+.tilter__figure::before {
+  content: '';
+  position: absolute;
+  top: 5%;
+  left: 5%;
+  width: 90%;
+  height: 90%;
+  box-shadow: 0 80px 50px rgba(35, 32, 39, 0.5);
+}
+
+.tilter__deco {
+  position: absolute;
+  top: 0;
+  left: 0;
+  overflow: hidden;
+  width: 100%;
+  height: 100%;
+}
+
+.tilter__deco--shine div {
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background-image: linear-gradient(
+    45deg,
+    rgba(0, 0, 0, 0.3) 0%,
+    rgba(255, 255, 255, 0.15) 50%,
+    transparent 100%
+  );
+}
