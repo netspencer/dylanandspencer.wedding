@@ -20,6 +20,16 @@ export default class Postcard {
 
   resize = () => {
     const { innerWidth: width, innerHeight: height } = this.window
+    if (width > height) {
+      this.element.classList.remove('portrait')
+      this.element.classList.add('landscape')
+      this.aspectRatio = 6 / 4
+    } else {
+      this.element.classList.remove('landscape')
+      this.element.classList.add('portrait')
+      this.aspectRatio = 4 / 6
+    }
+
     const maxSize = { width: width * 0.9, height: height * 0.9 }
     const size =
       maxSize.width / this.aspectRatio <= maxSize.height
