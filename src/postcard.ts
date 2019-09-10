@@ -30,7 +30,7 @@ export default class Postcard {
       this.aspectRatio = 4 / 6
     }
 
-    const maxSize = { width: width * 0.9, height: height * 0.9 }
+    const maxSize = { width: width * 0.8, height: height * 0.8 }
     const size =
       maxSize.width / this.aspectRatio <= maxSize.height
         ? { width: maxSize.width, height: maxSize.width / this.aspectRatio }
