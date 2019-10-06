@@ -14,6 +14,9 @@ export default class Story {
 
     this.setup()
     this.start()
+
+    this.resize()
+    window.addEventListener('resize', this.resize)
   }
 
   setup = () => {
@@ -45,5 +48,14 @@ export default class Story {
       //   this.window.scrollTo({ top: this.window.innerHeight })
       // }, 500)
     }, 700)
+  }
+
+  resize = () => {
+    // get navigation element height
+    const navbar = this.document.getElementById('navbar')
+    const navHeight = navbar.offsetHeight
+
+    // offset the postcard by half the navHeight
+    this.postcard.setTopOffset(navHeight / 2)
   }
 }

@@ -18,6 +18,10 @@ export default class Postcard {
     window.addEventListener('resize', this.resize)
   }
 
+  setTopOffset = (offset: number) => {
+    this.element.style.marginTop = `${offset}px`
+  }
+
   resize = () => {
     const { innerWidth: width, innerHeight: height } = this.window
     if (width > height) {
