@@ -2,8 +2,9 @@ import TiltEffect from './tilt'
 
 export default class Postcard {
   window: Window
-  parent: HTMLElement
   element: HTMLElement
+
+  parent: HTMLElement
   mobileCta: HTMLElement
 
   aspectRatio = 6 / 4
@@ -12,9 +13,9 @@ export default class Postcard {
 
   constructor(el: HTMLElement, window: Window) {
     this.window = window
+    this.element = el
 
     this.parent = el.parentElement
-    this.element = el
     this.mobileCta = el.ownerDocument.getElementById('cta-mobile')
 
     this.tilt = new TiltEffect(el)
