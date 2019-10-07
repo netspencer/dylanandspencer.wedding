@@ -2,15 +2,20 @@ import TiltEffect from './tilt'
 
 export default class Postcard {
   window: Window
+  parent: HTMLElement
   element: HTMLElement
+  mobileCta: HTMLElement
 
   aspectRatio = 6 / 4
 
   tilt: TiltEffect
 
   constructor(el: HTMLElement, window: Window) {
-    this.element = el
     this.window = window
+
+    this.parent = el.parentElement
+    this.element = el
+    this.mobileCta = el.ownerDocument.getElementById('cta-mobile')
 
     this.tilt = new TiltEffect(el)
 
@@ -19,7 +24,11 @@ export default class Postcard {
   }
 
   setTopOffset = (offset: number) => {
-    this.element.style.marginTop = `${offset}px`
+    this.parent.style.marginTop = `${offset}px`
+  }
+
+  setBottomOffset = (offset: number) => {
+    this.parent.style.marginBottom = `${offset}px`
   }
 
   resize = () => {
@@ -43,5 +52,9 @@ export default class Postcard {
     this.element.style.height = `${size.height}px`
     this.element.style.width = `${size.width}px`
     this.element.style.perspective = `${size.width * 1.25}px`
+
+    // mobile cta height
+    const ctaHeight = this.mobileCta.offsetHeight
+    this.setBottomOffset(ctaHeight)
   }
 }
