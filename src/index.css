@@ -29,6 +29,13 @@
   font-family: 'Libre Baskerville', serif;
 }
 
+/* TEXTURES */
+
+.bg-texture {
+  background-image: url(../static/texture.jpg);
+  background-repeat: repeat;
+}
+
 /* COLORS */
 
 .wedding-cream {

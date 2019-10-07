@@ -1,5 +1,6 @@
 import lottie, { AnimationItem } from 'lottie-web'
 import Postcard from './postcard'
+import Scroller from './scroller'
 
 export default class Story {
   window: Window
@@ -7,13 +8,17 @@ export default class Story {
 
   loadingAnimation: AnimationItem
   postcard: Postcard
+  scroller: Scroller
 
-  constructor(window: Window, document: Document) {
+  constructor(window: Window) {
     this.window = window
-    this.document = document
+    this.document = window.document
 
     this.setup()
     this.start()
+
+    this.resize()
+    window.addEventListener('resize', this.resize)
   }
 
   setup = () => {
@@ -32,6 +37,9 @@ export default class Story {
       this.document.getElementById('postcard'),
       this.window
     )
+
+    // - setup scroller
+    this.scroller = new Scroller(this.window)
   }
 
   start = () => {
@@ -45,5 +53,14 @@ export default class Story {
       //   this.window.scrollTo({ top: this.window.innerHeight })
       // }, 500)
     }, 700)
+  }
+
+  resize = () => {
+    // get navigation element height
+    const navbar = this.document.getElementById('navbar')
+    const navHeight = navbar.offsetHeight
+
+    // offset the postcard by half the navHeight
+    this.postcard.setTopOffset(navHeight / 2)
   }
 }
