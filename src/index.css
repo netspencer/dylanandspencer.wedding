@@ -1,5 +1,12 @@
 @import 'tachyons/css/tachyons.css';
 @import './tilter.css';
+@import './starwars.css';
+
+html,
+body {
+  overflow-x: hidden;
+  scroll-behavior: smooth;
+}
 
 .no-selection {
   user-select: none;

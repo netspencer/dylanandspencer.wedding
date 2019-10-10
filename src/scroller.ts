@@ -4,6 +4,10 @@ export default class Scroller {
   window: Window
   document: Document
 
+  storyContainer: HTMLElement
+
+  starwarsHeight: number
+
   offset: number
   scroller: any
 
@@ -11,9 +15,14 @@ export default class Scroller {
     this.window = window
     this.document = window.document
 
+    this.storyContainer = this.document.getElementById('our_story')
+
     this.offset = 0.5
     this.scroller = scrollama()
     this.setup()
+
+    this.resize()
+    this.window.addEventListener('resize', this.resize)
   }
 
   setup = () => {
@@ -35,29 +44,61 @@ export default class Scroller {
     this.window.addEventListener('resize', this.scroller.resize)
   }
 
+  resize = () => {
+    const height = this.window.innerHeight
+    const starwars = this.document.getElementById('starwars')
+    this.starwarsHeight = starwars.clientHeight
+    starwars.style.height = `${height}px`
+
+    starwars.style.perspective = `${height / 2}px`
+  }
+
   // EFFECTS
 
-  enter = index => {
-    console.log('ENTER', index)
-  }
-
-  exit = index => {
-    console.log('EXIT', index)
-  }
-
-  progress = (index, percent) => {
+  enter = (index: number) => {
     switch (index) {
-      case 0:
-        this.step0Progress(percent)
       default:
-        console.log('no progress handler')
+        break
     }
   }
 
-  step0Progress = percent => {
+  exit = (index: number) => {
+    switch (index) {
+      default:
+        break
+    }
+  }
+
+  progress = (index: number, percent: number) => {
+    switch (index) {
+      case 0:
+        this.step0Progress(percent)
+        break
+      case 1:
+        // this.starwarsProgress(percent)
+        break
+      default:
+        break
+    }
+  }
+
+  step0Progress = (percent: number) => {
     const adjusted = (percent - this.offset) * (1.0 / this.offset)
     const opacity = 1.0 - adjusted
     const ctaMobile = this.document.getElementById('cta-mobile')
     ctaMobile.style.opacity = `${opacity}`
+  }
+
+  starwarsProgress = (percent: number) => {
+    const crawl = this.document.getElementById('starwars_crawl')
+
+    console.log('starwars', this.calculateTop(percent))
+    crawl.style.top = this.calculateTop(percent)
+  }
+
+  private calculateTop(progress: number): string {
+    const top = 100 - 300 * progress
+
+    return `${top}%`
   }
 }
