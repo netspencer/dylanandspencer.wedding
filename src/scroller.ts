@@ -75,16 +75,9 @@ export default class Scroller {
     ctaMobile.style.opacity = `${opacity}`
   }
 
-  storyEnter = () => {
-    this.document.getElementById('story_container').style.position = 'fixed'
-  }
+  storyEnter = () => {}
 
-  storyExit = () => {
-    this.document.getElementById('story_container').style.position = 'absolute'
-  }
+  storyExit = () => {}
 
-  storyProgress = (percent: number) => {
-    console.log('starwars', percent)
-    // crawl.style.top = this.calculateTop(percent)
-  }
+  storyProgress = (percent: number) => {}
 }
