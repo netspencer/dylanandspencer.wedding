@@ -2,7 +2,7 @@ import lottie, { AnimationItem } from 'lottie-web'
 import Postcard from './postcard'
 import Scroller from './scroller'
 
-export default class Story {
+export default class Website {
   window: Window
   document: Document
 
@@ -32,14 +32,14 @@ export default class Story {
         'https://assets4.lottiefiles.com/datafiles/rFr1le9E8lhiQjf/data.json'
     })
 
+    // - setup scroller to keep track of scrolling for entire page
+    this.scroller = new Scroller(this.window)
+
     // - setup postcard
     this.postcard = new Postcard(
       this.document.getElementById('postcard'),
       this.window
     )
-
-    // - setup scroller
-    this.scroller = new Scroller(this.window)
   }
 
   start = () => {
@@ -49,9 +49,6 @@ export default class Story {
       this.document.querySelector('body').classList.remove('overflow-hidden')
       this.document.getElementById('loading-container').style.visibility =
         'hidden'
-      // setTimeout(() => {
-      //   this.window.scrollTo({ top: this.window.innerHeight })
-      // }, 500)
     }, 700)
   }
 

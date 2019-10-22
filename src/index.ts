@@ -1,5 +1,5 @@
 import 'intersection-observer'
-import Story from './story'
+import Website from './website'
 ;(function(window) {
-  new Story(window)
+  new Website(window)
 })(window)

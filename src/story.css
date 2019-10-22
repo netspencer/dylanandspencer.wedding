@@ -1,0 +1,31 @@
+.crawl-container {
+  position: absolute;
+  top: 0;
+  background: pink;
+  width: 100vw;
+  height: 800px;
+  perspective: 400px;
+  overflow: hidden;
+}
+
+.crawl-buffer {
+  height: 300vh;
+}
+
+.crawl {
+  position: relative;
+  top: 9999px;
+  transform-origin: 50% 100%;
+  animation: crawl 60s linear;
+}
+
+@keyframes crawl {
+  0% {
+    top: 0;
+    transform: rotateX(20deg) translateZ(0);
+  }
+  100% {
+    top: -6000px;
+    transform: rotateX(25deg) translateZ(-2000px);
+  }
+}
