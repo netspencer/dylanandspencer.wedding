@@ -6,7 +6,7 @@ class StoryPage extends Page {
   scroller: any
 
   constructor(window: Window) {
-    super(window, false)
+    super(window)
 
     this.offset = 0.5
     this.scroller = scrollama()

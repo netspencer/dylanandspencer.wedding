@@ -20,6 +20,7 @@
     "postcss-modules": "^1.4.1",
     "posthtml-include": "^1.2.0",
     "scrollama": "^2.0.1",
-    "tachyons": "^4.11.1"
+    "tachyons": "^4.11.1",
+    "turbolinks": "^5.2.0"
   }
 }

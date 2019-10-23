@@ -5,7 +5,7 @@ class IndexPage extends Page {
   postcard: Postcard
 
   constructor(window: Window) {
-    super(window, false)
+    super(window)
 
     this.setup()
     this.resize()
