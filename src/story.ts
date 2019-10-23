@@ -2,9 +2,6 @@ import scrollama from 'scrollama'
 import Page from './page'
 
 class StoryPage extends Page {
-  window: Window
-  document: Document
-
   offset: number
   scroller: any
 

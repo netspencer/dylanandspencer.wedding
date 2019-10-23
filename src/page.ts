@@ -9,7 +9,7 @@ export default class Page {
 
   loadingAnimation: AnimationItem
 
-  constructor(window: Window, requiresLoading: boolean = true) {
+  constructor(window: Window, requiresLoading: boolean = false) {
     this.window = window
     this.document = window.document
     this.requiresLoading = requiresLoading
@@ -31,7 +31,6 @@ export default class Page {
   }
 
   start = () => {
-    console.log('requiresLoading?', this.requiresLoading)
     const timeout = this.requiresLoading ? 700 : 0
     setTimeout(() => {
       this.loadingAnimation.destroy()
