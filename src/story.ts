@@ -1,6 +1,8 @@
+import 'intersection-observer'
 import scrollama from 'scrollama'
+import Page from './page'
 
-export default class Scroller {
+class StoryPage extends Page {
   window: Window
   document: Document
 
@@ -8,8 +10,7 @@ export default class Scroller {
   scroller: any
 
   constructor(window: Window) {
-    this.window = window
-    this.document = window.document
+    super(window)
 
     this.offset = 0.5
     this.scroller = scrollama()
@@ -39,8 +40,6 @@ export default class Scroller {
 
   enter = (index: number) => {
     switch (index) {
-      case 1:
-        this.storyEnter()
       default:
         break
     }
@@ -48,8 +47,6 @@ export default class Scroller {
 
   exit = (index: number) => {
     switch (index) {
-      case 1:
-        this.storyExit()
       default:
         break
     }
@@ -57,27 +54,12 @@ export default class Scroller {
 
   progress = (index: number, percent: number) => {
     switch (index) {
-      case 0:
-        this.step0Progress(percent)
-        break
-      case 1:
-        this.storyProgress(percent)
-        break
       default:
         break
     }
   }
-
-  step0Progress = (percent: number) => {
-    const adjusted = (percent - this.offset) * (1.0 / this.offset)
-    const opacity = 1.0 - adjusted
-    const ctaMobile = this.document.getElementById('cta-mobile')
-    ctaMobile.style.opacity = `${opacity}`
-  }
-
-  storyEnter = () => {}
-
-  storyExit = () => {}
-
-  storyProgress = (percent: number) => {}
 }
+
+;(function(window) {
+  new StoryPage(window)
+})(window)

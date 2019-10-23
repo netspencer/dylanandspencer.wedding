@@ -1,14 +1,11 @@
+import 'intersection-observer'
 import lottie, { AnimationItem } from 'lottie-web'
-import Postcard from './postcard'
-import Scroller from './scroller'
 
-export default class Website {
+export default class Page {
   window: Window
   document: Document
 
   loadingAnimation: AnimationItem
-  postcard: Postcard
-  scroller: Scroller
 
   constructor(window: Window) {
     this.window = window
@@ -16,9 +13,6 @@ export default class Website {
 
     this.setup()
     this.start()
-
-    this.resize()
-    window.addEventListener('resize', this.resize)
   }
 
   setup = () => {
@@ -31,33 +25,14 @@ export default class Website {
       path:
         'https://assets4.lottiefiles.com/datafiles/rFr1le9E8lhiQjf/data.json'
     })
-
-    // - setup scroller to keep track of scrolling for entire page
-    this.scroller = new Scroller(this.window)
-
-    // - setup postcard
-    this.postcard = new Postcard(
-      this.document.getElementById('postcard'),
-      this.window
-    )
   }
 
   start = () => {
     setTimeout(() => {
-      this.document.getElementById('postcard').style.visibility = 'visible'
       this.loadingAnimation.destroy()
       this.document.querySelector('body').classList.remove('overflow-hidden')
       this.document.getElementById('loading-container').style.visibility =
         'hidden'
     }, 700)
-  }
-
-  resize = () => {
-    // get navigation element height
-    const navbar = this.document.getElementById('navbar')
-    const navHeight = navbar.offsetHeight
-
-    // offset the postcard by half the navHeight
-    this.postcard.setTopOffset(navHeight / 2)
   }
 }
