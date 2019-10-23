@@ -1,4 +1,3 @@
-import 'intersection-observer'
 import scrollama from 'scrollama'
 import Page from './page'
 
@@ -10,7 +9,7 @@ class StoryPage extends Page {
   scroller: any
 
   constructor(window: Window) {
-    super(window)
+    super(window, false)
 
     this.offset = 0.5
     this.scroller = scrollama()

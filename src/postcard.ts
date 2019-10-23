@@ -1,4 +1,4 @@
-import TiltEffect from './tilt'
+import TiltEffect from './lib/tilt'
 
 export default class Postcard {
   window: Window

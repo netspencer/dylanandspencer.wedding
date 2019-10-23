@@ -4,7 +4,7 @@
   "repository": "git@github.com:netspencer/dylanandspencer.wedding.git",
   "author": "Spencer Schoeben <spencer@netspencer.com>",
   "scripts": {
-    "dev": "parcel src/story.html",
+    "dev": "parcel src/index.html",
     "build": "parcel build src/index.html"
   },
   "devDependencies": {

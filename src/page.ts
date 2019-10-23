@@ -5,11 +5,14 @@ export default class Page {
   window: Window
   document: Document
 
+  requiresLoading: boolean
+
   loadingAnimation: AnimationItem
 
-  constructor(window: Window) {
+  constructor(window: Window, requiresLoading: boolean = true) {
     this.window = window
     this.document = window.document
+    this.requiresLoading = requiresLoading
 
     this.setup()
     this.start()
@@ -28,11 +31,13 @@ export default class Page {
   }
 
   start = () => {
+    console.log('requiresLoading?', this.requiresLoading)
+    const timeout = this.requiresLoading ? 700 : 0
     setTimeout(() => {
       this.loadingAnimation.destroy()
       this.document.querySelector('body').classList.remove('overflow-hidden')
       this.document.getElementById('loading-container').style.visibility =
         'hidden'
-    }, 700)
+    }, timeout)
   }
 }
