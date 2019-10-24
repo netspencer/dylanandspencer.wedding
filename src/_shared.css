@@ -1,5 +1,8 @@
-@import 'tachyons/css/tachyons.css';
-@import './tilter.css';
+html,
+body {
+  overflow-x: hidden;
+  scroll-behavior: smooth;
+}
 
 .no-selection {
   user-select: none;
@@ -33,6 +36,7 @@
 
 .bg-texture {
   background-image: url(../static/texture.jpg);
+  background-attachment: fixed;
   background-repeat: repeat;
 }
 

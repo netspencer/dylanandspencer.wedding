@@ -1,4 +1,4 @@
-import TiltEffect from './tilt'
+import TiltEffect from './lib/tilt'
 
 export default class Postcard {
   window: Window
@@ -53,9 +53,5 @@ export default class Postcard {
     this.element.style.height = `${size.height}px`
     this.element.style.width = `${size.width}px`
     this.element.style.perspective = `${size.width * 1.25}px`
-
-    // mobile cta height
-    const ctaHeight = this.mobileCta.offsetHeight
-    this.setBottomOffset(ctaHeight)
   }
 }

@@ -1,66 +1,61 @@
-import lottie, { AnimationItem } from 'lottie-web'
-import Postcard from './postcard'
-import Scroller from './scroller'
+import scrollama from 'scrollama'
+import Page from './page'
 
-export default class Story {
-  window: Window
-  document: Document
-
-  loadingAnimation: AnimationItem
-  postcard: Postcard
-  scroller: Scroller
+class StoryPage extends Page {
+  offset: number
+  scroller: any
 
   constructor(window: Window) {
-    this.window = window
-    this.document = window.document
+    super(window)
 
+    this.offset = 0.5
+    this.scroller = scrollama()
     this.setup()
-    this.start()
-
-    this.resize()
-    window.addEventListener('resize', this.resize)
   }
 
   setup = () => {
-    // - setup loading
-    this.loadingAnimation = lottie.loadAnimation({
-      container: this.document.getElementById('loading-animation'),
-      renderer: 'svg',
-      loop: true,
-      autoplay: true,
-      path:
-        'https://assets4.lottiefiles.com/datafiles/rFr1le9E8lhiQjf/data.json'
-    })
-
-    // - setup postcard
-    this.postcard = new Postcard(
-      this.document.getElementById('postcard'),
-      this.window
-    )
-
-    // - setup scroller
-    this.scroller = new Scroller(this.window)
+    this.scroller
+      .setup({
+        step: '.step',
+        offset: this.offset,
+        progress: true
+      })
+      .onStepEnter(({ index }) => {
+        this.enter(index)
+      })
+      .onStepProgress(({ index, progress }) => {
+        this.progress(index, progress)
+      })
+      .onStepExit(({ index }) => {
+        this.exit(index)
+      })
+    this.window.addEventListener('resize', this.scroller.resize)
   }
 
-  start = () => {
-    setTimeout(() => {
-      this.document.getElementById('postcard').style.visibility = 'visible'
-      this.loadingAnimation.destroy()
-      this.document.querySelector('body').classList.remove('overflow-hidden')
-      this.document.getElementById('loading-container').style.visibility =
-        'hidden'
-      // setTimeout(() => {
-      //   this.window.scrollTo({ top: this.window.innerHeight })
-      // }, 500)
-    }, 700)
+  // EFFECTS
+
+  enter = (index: number) => {
+    switch (index) {
+      default:
+        break
+    }
   }
 
-  resize = () => {
-    // get navigation element height
-    const navbar = this.document.getElementById('navbar')
-    const navHeight = navbar.offsetHeight
+  exit = (index: number) => {
+    switch (index) {
+      default:
+        break
+    }
+  }
 
-    // offset the postcard by half the navHeight
-    this.postcard.setTopOffset(navHeight / 2)
+  progress = (index: number, percent: number) => {
+    switch (index) {
+      default:
+        break
+    }
   }
 }
+
+;(function(window) {
+  new StoryPage(window)
+})(window)
