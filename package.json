@@ -4,14 +4,23 @@
   "repository": "git@github.com:netspencer/dylanandspencer.wedding.git",
   "author": "Spencer Schoeben <spencer@netspencer.com>",
   "scripts": {
-    "dev": "parcel src/index.html",
-    "build": "parcel build src/index.html"
+    "dev": "next",
+    "build": "next build",
+    "start": "next start",
+    "type-check": "tsc"
   },
   "devDependencies": {
+    "@types/node": "^12.12.7",
+    "@types/react": "^16.9.11",
+    "@types/react-dom": "^16.9.4",
     "parcel-bundler": "^1.12.3",
-    "typescript": "^3.5.3"
+    "typescript": "^3.7.2"
   },
   "dependencies": {
+    "isomorphic-unfetch": "3.0.0",
+    "next": "latest",
+    "react": "^16.10.1",
+    "react-dom": "^16.10.1",
     "@csstools/normalize.css": "^10.1.0",
     "animejs": "^3.1.0",
     "autoprefixer": "^9.6.1",

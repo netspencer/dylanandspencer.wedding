@@ -35,7 +35,7 @@ body {
 /* TEXTURES */
 
 .bg-texture {
-  background-image: url(../static/texture.jpg);
+  background-image: url(/public/texture.jpg);
   background-attachment: fixed;
   background-repeat: repeat;
 }
