@@ -1,7 +1,8 @@
 import React, { FunctionComponent } from 'react'
 import Head from 'next/head'
+import Navigation from './Navigation'
 
-type Props = {
+interface Props {
   title?: string
 }
 
@@ -20,7 +21,10 @@ const Layout: FunctionComponent<Props> = ({ children, title }) => (
         rel="stylesheet"
       />
     </Head>
-    <main className="relative container">{children}</main>
+    <main className="relative container">
+      <Navigation />
+      {children}
+    </main>
     <style jsx global>{`
       html,
       body {
