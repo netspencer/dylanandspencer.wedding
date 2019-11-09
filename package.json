@@ -17,17 +17,18 @@
     "typescript": "^3.7.2"
   },
   "dependencies": {
-    "isomorphic-unfetch": "3.0.0",
-    "next": "latest",
-    "react": "^16.10.1",
-    "react-dom": "^16.10.1",
     "@csstools/normalize.css": "^10.1.0",
     "animejs": "^3.1.0",
     "autoprefixer": "^9.6.1",
     "intersection-observer": "^0.7.0",
+    "isomorphic-unfetch": "3.0.0",
     "lottie-web": "^5.5.7",
+    "next": "latest",
     "postcss-modules": "^1.4.1",
     "posthtml-include": "^1.2.0",
+    "react": "^16.10.1",
+    "react-dom": "^16.10.1",
+    "resize-observer-polyfill": "^1.5.1",
     "scrollama": "^2.0.1",
     "tachyons": "^4.11.1",
     "turbolinks": "^5.2.0"
