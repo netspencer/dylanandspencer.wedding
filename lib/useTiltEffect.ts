@@ -1,4 +1,4 @@
-import { RefObject, useEffect, useRef } from 'react'
+import { RefObject, useEffect, useRef, useMemo, useState } from 'react'
 import anime from 'animejs'
 
 interface TiltEffectRefs {
@@ -59,21 +59,22 @@ interface TiltEffectOptions {
 }
 
 function useTiltEffect(): TiltEffectRefs {
-  const containerRef = useRef()
-  const imageRef = useRef()
-  const captionRef = useRef()
-  const shineRef = useRef()
-
   const refs: TiltEffectRefs = {
-    containerRef,
-    imageRef,
-    captionRef,
-    shineRef
+    containerRef: useRef(),
+    imageRef: useRef(),
+    captionRef: useRef(),
+    shineRef: useRef()
   }
+  const effect = useMemo(() => {
+    return new TiltEffect(refs)
+  }, [refs])
+
+  const initialFocus: FocusCoordinate = { x: 0, y: 0 }
+  const [focusPos, setFocusPos] = useState(initialFocus)
 
   useEffect(() => {
-    const effect = new TiltEffect(refs)
-  }, [refs])
+    effect.setTilt(focusPos)
+  }, [effect, focusPos])
 
   return refs
 }
@@ -114,7 +115,7 @@ class TiltEffect {
   // Create a new instance of TiltEffect with the given TiltEffectRefs
   constructor(refs: TiltEffectRefs) {
     this.refs = refs
-    this.bind()
+    // this.bind()
   }
 
   bind = () => {
