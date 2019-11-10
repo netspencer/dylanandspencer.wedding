@@ -1,6 +1,34 @@
+import { RefObject, useEffect, useRef } from 'react'
 import anime from 'animejs'
 
-export default class TiltEffect {
+interface TiltEffectRefs {
+  containerRef: RefObject<any>
+  imageRef: RefObject<any>
+  captionRef: RefObject<any>
+  shineRef: RefObject<any>
+}
+
+function useTiltEffect(): TiltEffectRefs {
+  const containerRef = useRef()
+  const imageRef = useRef()
+  const captionRef = useRef()
+  const shineRef = useRef()
+
+  useEffect(() => {
+    if (containerRef.current) {
+      const effect = new TiltEffect(containerRef.current)
+    }
+  }, [containerRef])
+
+  return {
+    containerRef,
+    imageRef,
+    captionRef,
+    shineRef
+  }
+}
+
+class TiltEffect {
   DOM: {
     el?: HTMLElement
     animatable: { [key: string]: HTMLElement }
@@ -219,3 +247,5 @@ export default class TiltEffect {
     return { x: posX, y: posY }
   }
 }
+
+export default useTiltEffect

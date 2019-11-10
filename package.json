@@ -28,6 +28,7 @@
     "posthtml-include": "^1.2.0",
     "react": "^16.10.1",
     "react-dom": "^16.10.1",
+    "react-use": "^13.5.0",
     "resize-observer-polyfill": "^1.5.1",
     "scrollama": "^2.0.1",
     "tachyons": "^4.11.1",

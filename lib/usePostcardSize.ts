@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react'
-import { WindowSize } from './use-window-size'
+import { WindowSize } from './useWindowSize'
 
 export interface PostcardSize {
   width: number
