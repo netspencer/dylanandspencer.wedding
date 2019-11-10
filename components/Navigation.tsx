@@ -20,8 +20,10 @@ const NavigationItem: FunctionComponent<Props> = ({ title, href, final }) => (
       </a>
     </Link>
     <style jsx>{`
-      a.link {
-        font-size: 0.8rem;
+      @media (max-width: 320px) {
+        a.link {
+          font-size: 0.8rem;
+        }
       }
     `}</style>
   </>
