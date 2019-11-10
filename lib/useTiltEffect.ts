@@ -2,10 +2,36 @@ import { RefObject, useEffect, useRef } from 'react'
 import anime from 'animejs'
 
 interface TiltEffectRefs {
-  containerRef: RefObject<any>
-  imageRef: RefObject<any>
-  captionRef: RefObject<any>
-  shineRef: RefObject<any>
+  containerRef: RefObject<HTMLElement>
+  imageRef: RefObject<HTMLElement>
+  captionRef: RefObject<HTMLElement>
+  shineRef: RefObject<HTMLElement>
+}
+
+interface TiltEffectLayers {
+  image: HTMLElement
+  caption: HTMLElement
+  shine: HTMLElement
+}
+
+interface TiltEffectMovement {
+  translation?: { x: number; y: number; z: number }
+  rotation?: { x: number; y: number; z: number }
+  reverseAnimation?: {
+    duration: number
+    easing: string
+    elasticity: number
+  }
+}
+
+interface TiltEffectMovementOptions {
+  image: TiltEffectMovement
+  caption: TiltEffectMovement
+  shine: TiltEffectMovement
+}
+
+interface TiltEffectOptions {
+  movement: TiltEffectMovementOptions
 }
 
 function useTiltEffect(): TiltEffectRefs {
@@ -14,88 +40,106 @@ function useTiltEffect(): TiltEffectRefs {
   const captionRef = useRef()
   const shineRef = useRef()
 
-  useEffect(() => {
-    if (containerRef.current) {
-      const effect = new TiltEffect(containerRef.current)
-    }
-  }, [containerRef])
-
-  return {
+  const refs: TiltEffectRefs = {
     containerRef,
     imageRef,
     captionRef,
     shineRef
   }
+
+  useEffect(() => {
+    const effect = new TiltEffect(refs)
+  }, [refs])
+
+  return refs
 }
 
 class TiltEffect {
-  DOM: {
-    el?: HTMLElement
-    animatable: { [key: string]: HTMLElement }
-  } = { animatable: {} }
-
-  options: {
+  refs: TiltEffectRefs
+  options: TiltEffectOptions = {
     movement: {
-      [key: string]: {
-        translation?: { x: number; y: number; z: number }
-        rotation?: { x: number; y: number; z: number }
-        reverseAnimation?: {
-          duration: number
-          easing: string
-          elasticity: number
+      image: {
+        translation: { x: 0, y: 0, z: 0 },
+        rotation: { x: -5, y: 5, z: 0 },
+        reverseAnimation: {
+          duration: 1200,
+          easing: 'easeOutElastic',
+          elasticity: 600
+        }
+      },
+      caption: {
+        translation: { x: 20, y: 20, z: 0 },
+        rotation: { x: 0, y: 0, z: 0 },
+        reverseAnimation: {
+          duration: 1500,
+          easing: 'easeOutElastic',
+          elasticity: 600
+        }
+      },
+      shine: {
+        translation: { x: 50, y: 50, z: 0 },
+        reverseAnimation: {
+          duration: 1200,
+          easing: 'easeOutElastic',
+          elasticity: 600
         }
       }
     }
-  } = { movement: {} }
+  }
 
-  constructor(el: HTMLElement, options = {}) {
-    this.DOM.el = el
-    this.options.movement.imgWrapper = {
-      translation: { x: 0, y: 0, z: 0 },
-      rotation: { x: -5, y: 5, z: 0 },
-      reverseAnimation: {
-        duration: 1200,
-        easing: 'easeOutElastic',
-        elasticity: 600
-      }
-    }
-    this.options.movement.caption = {
-      translation: { x: 20, y: 20, z: 0 },
-      rotation: { x: 0, y: 0, z: 0 },
-      reverseAnimation: {
-        duration: 1500,
-        easing: 'easeOutElastic',
-        elasticity: 600
-      }
-    }
-    this.options.movement.shine = {
-      translation: { x: 50, y: 50, z: 0 },
-      reverseAnimation: {
-        duration: 1200,
-        easing: 'easeOutElastic',
-        elasticity: 600
-      }
-    }
-    this.options = Object.assign(this.options, options)
-    this.setup()
+  // Create a new instance of TiltEffect with the given TiltEffectRefs
+  constructor(refs: TiltEffectRefs) {
+    this.refs = refs
     this.bind()
   }
 
-  setup = () => {
-    const el = this.DOM.el
-    this.DOM.animatable.imgWrapper = el.querySelector('.tilter__figure')
-    this.DOM.animatable.caption = el.querySelector('.tilter__caption')
-    this.DOM.animatable.shine = el.querySelector('.tilter__deco--shine > div')
-  }
-
   bind = () => {
-    const el = this.DOM.el
+    const el = this.refs.containerRef.current
     el.addEventListener('mousemove', this.mouseDidMove)
     el.addEventListener('mouseleave', this.mouseDidLeave)
     el.addEventListener('mouseenter', this.mouseDidEnter)
   }
 
-  layout = (ev: Event) => {
+  prepareAnimations = () => {
+    const layers = this.getLayers()
+    for (let key in layers) {
+      anime.remove(layers[key])
+    }
+  }
+
+  resetTilt = () => {
+    const layers = this.getLayers()
+    for (let key in layers) {
+      if (!this.options.movement[key]) continue
+
+      anime({
+        targets: layers[key],
+        duration:
+          (this.options.movement[key].reverseAnimation &&
+            this.options.movement[key].reverseAnimation.duration) ||
+          1,
+        easing:
+          (this.options.movement[key].reverseAnimation &&
+            this.options.movement[key].reverseAnimation.easing) ||
+          'linear',
+        elasticity:
+          (this.options.movement[key].reverseAnimation &&
+            this.options.movement[key].reverseAnimation.elasticity) ||
+          null,
+        scaleX: 1,
+        scaleY: 1,
+        scaleZ: 1,
+        translateX: 0,
+        translateY: 0,
+        translateZ: 0,
+        rotateX: 0,
+        rotateY: 0,
+        rotateZ: 0
+      })
+    }
+  }
+
+  setTilt = (ev: Event) => {
     const mousePos = this.getMousePos(ev)
 
     const scrollPos = {
@@ -103,7 +147,7 @@ class TiltEffect {
       top: document.body.scrollTop + document.documentElement.scrollTop
     }
 
-    const bounds = this.DOM.el.getBoundingClientRect()
+    const bounds = this.getContainer().getBoundingClientRect()
 
     const relativeMousePos = {
       x: mousePos.x - bounds.left - scrollPos.left,
@@ -111,8 +155,9 @@ class TiltEffect {
     }
 
     // Movement settings for the animatable elements.
-    for (let key in this.DOM.animatable) {
-      if (!this.DOM.animatable[key]) continue
+    const layers = this.getLayers()
+    for (let key in layers) {
+      if (!layers[key]) continue
       if (!this.options.movement[key]) continue
 
       const translation = (this.options.movement[key] &&
@@ -173,55 +218,40 @@ class TiltEffect {
         rotateZ(${transforms.rotation.z}deg)
         `
 
-      this.DOM.animatable[key].style.webkitTransform = transformStyle
-      this.DOM.animatable[key].style.transform = transformStyle
+      layers[key].style.webkitTransform = transformStyle
+      layers[key].style.transform = transformStyle
+    }
+  }
+
+  // getContainer returns the HTMLElement for the TiltEffect's container
+  getContainer = (): HTMLElement => {
+    return this.refs.containerRef.current
+  }
+
+  // getLayers returns the image, caption, and shine HTMLElement layers from the refs
+  getLayers = (): TiltEffectLayers => {
+    return {
+      image: this.refs.imageRef.current,
+      caption: this.refs.captionRef.current,
+      shine: this.refs.shineRef.current
     }
   }
 
   mouseDidMove = (ev: Event) => {
     requestAnimationFrame(() => {
-      this.layout(ev)
+      this.setTilt(ev)
     })
   }
 
   mouseDidLeave = (ev: Event) => {
     requestAnimationFrame(() => {
-      for (let key in this.DOM.animatable) {
-        if (!this.options.movement[key]) continue
-
-        anime({
-          targets: this.DOM.animatable[key],
-          duration:
-            (this.options.movement[key].reverseAnimation &&
-              this.options.movement[key].reverseAnimation.duration) ||
-            1,
-          easing:
-            (this.options.movement[key].reverseAnimation &&
-              this.options.movement[key].reverseAnimation.easing) ||
-            'linear',
-          elasticity:
-            (this.options.movement[key].reverseAnimation &&
-              this.options.movement[key].reverseAnimation.elasticity) ||
-            null,
-          scaleX: 1,
-          scaleY: 1,
-          scaleZ: 1,
-          translateX: 0,
-          translateY: 0,
-          translateZ: 0,
-          rotateX: 0,
-          rotateY: 0,
-          rotateZ: 0
-        })
-      }
+      this.resetTilt()
     })
   }
 
   // mouseDidEnter handles events when mouse enters an element
   mouseDidEnter = (ev: Event) => {
-    for (let key in this.DOM.animatable) {
-      anime.remove(this.DOM.animatable[key])
-    }
+    this.prepareAnimations()
   }
 
   // getMousePos returns the xy position of the mouse for a given event

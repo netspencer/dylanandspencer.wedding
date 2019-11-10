@@ -10,9 +10,9 @@ const Postcard: FunctionComponent = () => {
       <article ref={containerRef} className="z-5 center">
         <figure ref={imageRef}>
           <img src="/photoshoot/12.jpg" alt="Spencer and Dylan in a park" />
-          <div className="shine">
-            <div ref={shineRef}></div>
-          </div>
+          <summary>
+            <details ref={shineRef}></details>
+          </summary>
           <figcaption
             ref={captionRef}
             className="db-ns dn tl absolute bottom-0 w-100 pa5"
@@ -144,7 +144,7 @@ const Postcard: FunctionComponent = () => {
           box-shadow: 0 80px 50px rgba(35, 32, 39, 0.5);
         }
 
-        .shine {
+        summary {
           position: absolute;
           top: 0;
           left: 0;
@@ -153,7 +153,7 @@ const Postcard: FunctionComponent = () => {
           height: 100%;
         }
 
-        .shine div {
+        summary details {
           position: absolute;
           top: -50%;
           left: -50%;
