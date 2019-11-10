@@ -1,4 +1,5 @@
 import { RefObject, useEffect, useRef, useMemo, useState } from 'react'
+import { useMouse } from 'react-use'
 import anime from 'animejs'
 
 interface TiltEffectRefs {
@@ -60,21 +61,31 @@ interface TiltEffectOptions {
 
 function useTiltEffect(): TiltEffectRefs {
   const refs: TiltEffectRefs = {
-    containerRef: useRef(),
-    imageRef: useRef(),
-    captionRef: useRef(),
-    shineRef: useRef()
+    containerRef: useRef(null),
+    imageRef: useRef(null),
+    captionRef: useRef(null),
+    shineRef: useRef(null)
   }
   const effect = useMemo(() => {
     return new TiltEffect(refs)
   }, [refs])
 
-  const initialFocus: FocusCoordinate = { x: 0, y: 0 }
+  const initialFocus: FocusCoordinate | null = null
   const [focusPos, setFocusPos] = useState(initialFocus)
 
   useEffect(() => {
-    effect.setTilt(focusPos)
+    if (focusPos != null) {
+      effect.setTilt(focusPos)
+    } else {
+      effect.prepareAnimations()
+    }
   }, [effect, focusPos])
+
+  const { docX, docY } = useMouse(refs.containerRef)
+
+  useEffect(() => {
+    setFocusPos({ x: docX, y: docY })
+  }, [docX, docY, setFocusPos])
 
   return refs
 }
