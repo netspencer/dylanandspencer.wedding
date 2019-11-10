@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react'
 
-interface WindowSize {
+export interface WindowSize {
   innerHeight?: number
   innerWidth?: number
   outerHeight?: number
@@ -32,7 +32,7 @@ function useWindowSize() {
     return () => {
       window.removeEventListener('resize', handleResize)
     }
-  }, [])
+  }, [isClient])
 
   return windowSize
 }
