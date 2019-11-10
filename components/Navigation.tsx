@@ -8,16 +8,23 @@ interface Props {
 }
 
 const NavigationItem: FunctionComponent<Props> = ({ title, href, final }) => (
-  <Link href={href}>
-    <a
-      className={`link dim wedding-gray f5 f4-l dib ${
-        final ? '' : 'mr2 mr4-l'
-      }`}
-      title={title}
-    >
-      {title}
-    </a>
-  </Link>
+  <>
+    <Link href={href}>
+      <a
+        className={`link dim wedding-gray f5 f4-l dib ${
+          final ? '' : 'mr2 mr4-l'
+        }`}
+        title={title}
+      >
+        {title}
+      </a>
+    </Link>
+    <style jsx>{`
+      a.link {
+        font-size: 0.8rem;
+      }
+    `}</style>
+  </>
 )
 
 const Navigation: FunctionComponent = () => (
