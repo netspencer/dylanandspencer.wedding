@@ -2,8 +2,10 @@
   "files.exclude": {
     ".cache": true,
     ".gitignore": true,
+    ".next": true,
     ".vscode": true,
     "dist": true,
+    "node_modules": true,
     "yarn.lock": true
   }
 }
