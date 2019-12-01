@@ -6,10 +6,13 @@ interface Props {
   title?: string
 }
 
-const Layout: FunctionComponent<Props> = ({ children, title }) => (
+const Layout: FunctionComponent<Props> = ({
+  children,
+  title = 'May 24, 2020'
+}) => (
   <>
     <Head>
-      <title>Dylan &amp; Spencer | May 24, 2020</title>
+      <title>Dylan &amp; Spencer | {title}</title>
       <meta name="viewport" content="width=device-width, initial-scale=1.0" />
       <meta http-equiv="X-UA-Compatible" content="ie=edge" />
       <link
