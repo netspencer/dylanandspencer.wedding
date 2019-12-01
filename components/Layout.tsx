@@ -24,7 +24,7 @@ const Layout: FunctionComponent<Props> = ({
         rel="stylesheet"
       />
     </Head>
-    <main className="relative container">
+    <main className="relative">
       <Navigation />
       {children}
     </main>
