@@ -68,7 +68,7 @@ const MobileNav: FunctionComponent<{
   onSelect: () => void
 }> = ({ hidden, onSelect }) => (
   <nav
-    style={{ backgroundColor: 'rgba(255,255,255,0.35)' }}
+    style={{ backgroundColor: 'rgba(255,255,255,0.5)' }}
     className={classNames(
       { hidden: hidden, block: !hidden },
       'left-0',

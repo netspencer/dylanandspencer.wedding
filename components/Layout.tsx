@@ -34,7 +34,7 @@ const Layout: FunctionComponent<Props> = ({
           transition: all 0.3s;
         }
         .blur {
-          filter: blur(15px);
+          filter: blur(25px);
         }
       `}</style>
     </div>
