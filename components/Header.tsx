@@ -1,6 +1,7 @@
-import React, { FunctionComponent } from 'react'
+import React, { FunctionComponent, useContext } from 'react'
 import Link from 'next/link'
 import classNames from 'classnames'
+import { NavVisibility } from './Layout'
 
 const RootNavigationItem: FunctionComponent<{
   onClick?: () => void
@@ -120,9 +121,8 @@ const MobileNav: FunctionComponent<{
 
 const Header: FunctionComponent<{
   sticky: boolean
-  toggleNavVisibility: (nextValue?: any) => void
-  isNavVisible: boolean
-}> = ({ sticky, isNavVisible, toggleNavVisibility }) => {
+}> = ({ sticky }) => {
+  const [isNavVisible, toggleNavVisibility] = useContext(NavVisibility)
   return (
     <>
       <header
