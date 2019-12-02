@@ -22,22 +22,38 @@ const Postcard: FunctionComponent = () => {
               'absolute',
               'bottom-0',
               'w-full',
-              'p-10'
+              'p-16'
             )}
           >
             <h3
               className={classNames(
                 'fatface',
-                'text-6xl',
+                'text-5xl',
+                'lg:text-7xl',
                 'wedding-cream',
-                'font-normal',
-                'mb-2'
+                'font-normal'
               )}
             >
               May 24, 2020
             </h3>
-            <p className={classNames('text-2xl', 'wedding-cream', 'libre')}>
-              Hummingbird Nest Ranch &bull; Simi Valley, CA
+            <p
+              className={classNames(
+                'text-xl',
+                'lg:text-2xl',
+                'wedding-cream',
+                'libre'
+              )}
+            >
+              <span className={classNames('block', 'lg:inline')}>
+                Hummingbird Nest Ranch
+              </span>
+              <span className={classNames('hidden', 'lg:inline')}>
+                {' '}
+                &bull;{' '}
+              </span>
+              <span className={classNames('block', 'lg:inline')}>
+                Simi Valley, CA
+              </span>
             </p>
           </figcaption>
         </figure>
