@@ -106,6 +106,15 @@ const MobileNav: FunctionComponent<{
       title="Registry"
     />
     <NavigationItem onClick={onSelect} mobile href="/rsvp" title="RSVP" />
+    {!hidden && (
+      <style jsx global>{`
+        html,
+        body {
+          height: 100%;
+          overflow: hidden;
+        }
+      `}</style>
+    )}
   </nav>
 )
 
