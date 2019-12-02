@@ -128,8 +128,14 @@ const Postcard: FunctionComponent = () => {
         }
 
         @media (max-height: 800px) and (orientation: portrait) {
+          section {
+            margin-top: -20px !important;
+          }
           article {
             margin-top: 12vh;
+          }
+          aside {
+            margin-top: 10px !important;
           }
           aside h3 {
             font-size: 1.4rem;
@@ -157,6 +163,13 @@ const Postcard: FunctionComponent = () => {
             width: 40vh;
             height: 60vh;
             margin-top: 20vh;
+          }
+        }
+
+        @media (max-width: 480px) {
+          section {
+            margin-top: 0;
+            position: static;
           }
         }
 
