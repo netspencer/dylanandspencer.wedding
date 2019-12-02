@@ -1,14 +1,26 @@
 import 'resize-observer-polyfill'
-import React, { FunctionComponent } from 'react'
+import React, { FunctionComponent, useContext } from 'react'
 import useTiltEffect from '../lib/useTiltEffect'
 import classNames from 'classnames'
+import { NavVisibility } from './Layout'
+import { useMedia } from 'react-use'
 
 const Postcard: FunctionComponent = () => {
   const { containerRef, imageRef, captionRef, shineRef } = useTiltEffect()
+  const isMobile = useMedia('(max-width: 640px)')
+  const [_, toggleNavVisibility] = useContext(NavVisibility)
 
   return (
     <section className={classNames('select-none', 'relative')}>
-      <article ref={containerRef} className={classNames('mx-auto')}>
+      <article
+        ref={containerRef}
+        className={classNames('mx-auto')}
+        onClick={() => {
+          if (isMobile) {
+            toggleNavVisibility(true)
+          }
+        }}
+      >
         <figure ref={imageRef}>
           <img src="/photoshoot/12.jpg" alt="Spencer and Dylan in a park" />
           <summary>
@@ -128,8 +140,14 @@ const Postcard: FunctionComponent = () => {
         }
 
         @media (max-height: 800px) and (orientation: portrait) {
+          section {
+            margin-top: -20px !important;
+          }
           article {
             margin-top: 12vh;
+          }
+          aside {
+            margin-top: 10px !important;
           }
           aside h3 {
             font-size: 1.4rem;
@@ -157,6 +175,13 @@ const Postcard: FunctionComponent = () => {
             width: 40vh;
             height: 60vh;
             margin-top: 20vh;
+          }
+        }
+
+        @media (max-width: 480px) {
+          section {
+            margin-top: 0;
+            position: static;
           }
         }
 
