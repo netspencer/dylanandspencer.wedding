@@ -7,9 +7,9 @@ import StoryWrapper from '../components/StoryWrapper'
 const StoryPage: NextPage = () => {
   return (
     <Layout>
-      <StoryWrapper>
+      {/* <StoryWrapper>
         <StoryDocument />
-      </StoryWrapper>
+      </StoryWrapper> */}
 
       {/* <section className="step dt w-100 relative">
                 <div className="dtc v-mid wedding-gray ph3 ph4-l">
