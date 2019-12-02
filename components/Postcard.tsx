@@ -1,13 +1,14 @@
 import 'resize-observer-polyfill'
 import React, { FunctionComponent } from 'react'
 import useTiltEffect from '../lib/useTiltEffect'
+import classNames from 'classnames'
 
 const Postcard: FunctionComponent = () => {
   const { containerRef, imageRef, captionRef, shineRef } = useTiltEffect()
 
   return (
-    <section>
-      <article ref={containerRef} className="z-5 center">
+    <section className={classNames('select-none')}>
+      <article ref={containerRef} className={classNames('mx-auto')}>
         <figure ref={imageRef}>
           <img src="/photoshoot/12.jpg" alt="Spencer and Dylan in a park" />
           <summary>
@@ -15,27 +16,75 @@ const Postcard: FunctionComponent = () => {
           </summary>
           <figcaption
             ref={captionRef}
-            className="db-ns dn tl absolute bottom-0 w-100 pa5"
+            className={classNames(
+              'hidden',
+              'md:block',
+              'absolute',
+              'bottom-0',
+              'w-full',
+              'p-16'
+            )}
           >
-            <h3 className="fatface f-subheadline-l f1-m f2 wedding-cream fw4 lh-title ma0 mb2">
+            <h3
+              className={classNames(
+                'fatface',
+                'text-5xl',
+                'lg:text-7xl',
+                'wedding-cream',
+                'font-normal'
+              )}
+            >
               May 24, 2020
             </h3>
-            <p className="f3-l f4 libre ma0 lh-copy wedding-cream">
-              Hummingbird Nest Ranch &bull; Simi Valley, CA
+            <p
+              className={classNames(
+                'text-xl',
+                'lg:text-2xl',
+                'wedding-cream',
+                'libre'
+              )}
+            >
+              <span className={classNames('block', 'lg:inline')}>
+                Hummingbird Nest Ranch
+              </span>
+              <span className={classNames('hidden', 'lg:inline')}>
+                {' '}
+                &bull;{' '}
+              </span>
+              <span className={classNames('block', 'lg:inline')}>
+                Simi Valley, CA
+              </span>
             </p>
           </figcaption>
         </figure>
       </article>
-      <aside className="dn-ns db mt3 w-100 pa3 wedding-gray">
-        <h3 className="fatface f2 fw4 lh-title ma0 mb2">May 24, 2020</h3>
-        <p className="f5 f4-l libre ma0 lh-copy">
+      <aside
+        className={classNames(
+          'block',
+          'md:hidden',
+          'mt-4',
+          'w-full',
+          'p-2',
+          'wedding-gray',
+          'text-center'
+        )}
+      >
+        <h3 className={classNames('fatface', 'text-3xl')}>May 24, 2020</h3>
+        <p className={classNames('text-l', 'libre', 'leading-normal')}>
           Hummingbird Nest Ranch
           <br />
           Simi Valley, CA
         </p>
       </aside>
       <style jsx>{`
+        section {
+          position: relative;
+          top: 50vh;
+        }
         @media (orientation: landscape) {
+          section {
+            margin-top: -37.5vh;
+          }
           article {
             perspective: 140vh;
             width: 112.5vh;
@@ -44,6 +93,9 @@ const Postcard: FunctionComponent = () => {
         }
 
         @media (max-aspect-ratio: 6/4) {
+          section {
+            margin-top: -25vw;
+          }
           article {
             perspective: 93.75vw;
             width: 75vw;
@@ -52,6 +104,9 @@ const Postcard: FunctionComponent = () => {
         }
 
         @media (orientation: portrait) {
+          section {
+            margin-top: -37.5vh;
+          }
           article {
             perspective: 62vh;
             width: 50vh;
@@ -61,6 +116,9 @@ const Postcard: FunctionComponent = () => {
         }
 
         @media (max-aspect-ratio: 4/6) {
+          section {
+            margin-top: -56.25vw;
+          }
           article {
             perspective: 93.75vw;
             width: 75vw;
@@ -91,6 +149,9 @@ const Postcard: FunctionComponent = () => {
         }
 
         @media (max-height: 600px) and (orientation: portrait) {
+          section {
+            margin-top: -30vh;
+          }
           article {
             perspective: 50vh;
             width: 40vh;

@@ -9,32 +9,35 @@
     "start": "next start",
     "type-check": "tsc"
   },
-  "devDependencies": {
-    "@types/animejs": "^3.1.0",
-    "@types/node": "^12.12.7",
-    "@types/react": "^16.9.11",
-    "@types/react-dom": "^16.9.4",
-    "parcel-bundler": "^1.12.3",
-    "typescript": "^3.7.2"
-  },
   "dependencies": {
-    "@csstools/normalize.css": "^10.1.0",
+    "@mdx-js/loader": "^1.5.1",
+    "@next/mdx": "^9.1.1",
+    "@zeit/next-css": "^1.0.1",
     "animejs": "^3.1.0",
-    "autoprefixer": "^9.6.1",
+    "classnames": "^2.2.6",
     "intersection-observer": "^0.7.0",
     "isomorphic-unfetch": "3.0.0",
-    "lottie-web": "^5.5.7",
     "next": "latest",
-    "postcss-modules": "^1.4.1",
-    "posthtml-include": "^1.2.0",
     "react": "^16.10.1",
     "react-dom": "^16.10.1",
     "react-use": "^13.5.0",
     "resize-observer-polyfill": "^1.5.1",
-    "scrollama": "^2.0.1",
-    "tachyons": "^4.11.1",
-    "turbolinks": "^5.2.0",
-    "@mdx-js/loader": "^1.5.1",
-    "@next/mdx": "^9.1.1"
+    "scrollama": "^2.0.1"
+  },
+  "devDependencies": {
+    "@fullhuman/postcss-purgecss": "^1.3.0",
+    "@now/node": "^1.1.2",
+    "@types/animejs": "^3.1.0",
+    "@types/classnames": "^2.2.9",
+    "@types/node": "^12.12.7",
+    "@types/react": "^16.9.11",
+    "@types/react-dom": "^16.9.4",
+    "autoprefixer": "^9.6.5",
+    "cssnano": "^4.1.0",
+    "parcel-bundler": "^1.12.3",
+    "postcss-easy-import": "^3.0.0",
+    "tailwindcss": "^1.0.1",
+    "typescript": "^3.7.2",
+    "webpack": "^4.41.2"
   }
 }

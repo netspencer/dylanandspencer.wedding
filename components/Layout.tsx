@@ -1,6 +1,8 @@
 import React, { FunctionComponent } from 'react'
 import Head from 'next/head'
 import Navigation from './Navigation'
+import classNames from 'classnames'
+import { useRouter } from 'next/router'
 
 interface Props {
   title?: string
@@ -9,106 +11,22 @@ interface Props {
 const Layout: FunctionComponent<Props> = ({
   children,
   title = 'May 24, 2020'
-}) => (
-  <>
-    <Head>
-      <title>Dylan &amp; Spencer | {title}</title>
-      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-      <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-      <link
-        rel="stylesheet"
-        href="https://unpkg.com/tachyons@4.10.0/css/tachyons.min.css"
-      />
-      <link
-        href="https://fonts.googleapis.com/css?family=Abril+Fatface|Didact+Gothic|Libre+Baskerville&display=swap"
-        rel="stylesheet"
-      />
-    </Head>
-    <main className="relative">
-      <Navigation />
-      {children}
-    </main>
-    <style jsx global>{`
-      html,
-      body {
-        overflow-x: hidden;
-        scroll-behavior: smooth;
-      }
-
-      body {
-        background-color: #faf6e9;
-        background-image: url(/texture.jpg);
-        background-attachment: fixed;
-        background-repeat: repeat;
-      }
-
-      .no-selection {
-        user-select: none;
-      }
-
-      .cursor-progress {
-        cursor: progress;
-      }
-
-      /* FONT SIZE */
-
-      .text-huge {
-        font-size: 16em;
-      }
-
-      /* FONTS */
-
-      .didact {
-        font-family: 'Didact Gothic', sans-serif;
-      }
-
-      .fatface {
-        font-family: 'Abril Fatface', serif;
-      }
-
-      .libre {
-        font-family: 'Libre Baskerville', serif;
-      }
-
-      /* TEXTURES */
-
-      .bg-texture {
-        background-image: url(/texture.jpg);
-        background-attachment: fixed;
-        background-repeat: repeat;
-      }
-
-      /* COLORS */
-
-      .wedding-cream {
-        color: #faf6e9;
-      }
-      .bg-wedding-cream {
-        background-color: #faf6e9;
-      }
-
-      .wedding-tan {
-        color: #ece8d9;
-      }
-      .bg-wedding-tan {
-        background-color: #ece8d9;
-      }
-
-      .wedding-offwhite {
-        color: #fffdf6;
-      }
-      .bg-wedding-offwhite {
-        background-color: #fffdf6;
-      }
-
-      .wedding-gray {
-        color: #494949;
-      }
-      .bg-wedding-gray {
-        background-color: #494949;
-      }
-    `}</style>
-  </>
-)
+}) => {
+  const { pathname } = useRouter()
+  return (
+    <>
+      <Head>
+        <title>Dylan &amp; Spencer | {title}</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+      </Head>
+      <main className={classNames('relative')}>
+        <Navigation sticky={pathname != '/'} />
+        {children}
+      </main>
+      <style jsx global>{``}</style>
+    </>
+  )
+}
 
 export default Layout
