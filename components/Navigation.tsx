@@ -26,6 +26,9 @@ const NavigationItem: FunctionComponent<Props> = ({ title, href, final }) => (
 const Navigation: FunctionComponent = () => (
   <nav
     className={classNames(
+      'sticky',
+      'top-0',
+      'w-full',
       'flex',
       'items-center',
       'justify-between',

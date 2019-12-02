@@ -11,7 +11,7 @@ const components: Components = {
 }
 
 const StoryWrapper: FunctionComponent = ({ children }) => (
-  <article className={classNames('libre', 'max-w-3xl', 'mx-auto')}>
+  <article className={classNames('libre', 'max-w-3xl', 'mx-auto', 'py-48')}>
     <MDXProvider components={components}>{children}</MDXProvider>
   </article>
 )

@@ -35,7 +35,14 @@ const Postcard: FunctionComponent = () => {
         </p>
       </aside>
       <style jsx>{`
+        section {
+          position: relative;
+          top: 50vh;
+        }
         @media (orientation: landscape) {
+          section {
+            margin-top: -37.5vh;
+          }
           article {
             perspective: 140vh;
             width: 112.5vh;
@@ -44,6 +51,9 @@ const Postcard: FunctionComponent = () => {
         }
 
         @media (max-aspect-ratio: 6/4) {
+          section {
+            margin-top: -25vw;
+          }
           article {
             perspective: 93.75vw;
             width: 75vw;
@@ -52,6 +62,9 @@ const Postcard: FunctionComponent = () => {
         }
 
         @media (orientation: portrait) {
+          section {
+            margin-top: -37.5vh;
+          }
           article {
             perspective: 62vh;
             width: 50vh;
@@ -61,6 +74,9 @@ const Postcard: FunctionComponent = () => {
         }
 
         @media (max-aspect-ratio: 4/6) {
+          section {
+            margin-top: -56.25vw;
+          }
           article {
             perspective: 93.75vw;
             width: 75vw;
@@ -91,6 +107,9 @@ const Postcard: FunctionComponent = () => {
         }
 
         @media (max-height: 600px) and (orientation: portrait) {
+          section {
+            margin-top: -30vh;
+          }
           article {
             perspective: 50vh;
             width: 40vh;
