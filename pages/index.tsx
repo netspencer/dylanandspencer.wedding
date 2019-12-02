@@ -5,9 +5,18 @@ import Postcard from '../components/Postcard'
 
 const IndexPage: NextPage = () => {
   return (
-    <Layout>
-      <Postcard />
-    </Layout>
+    <>
+      <Layout>
+        <Postcard />
+      </Layout>
+      <style jsx global>{`
+        html,
+        body {
+          height: 100%;
+          overflow: hidden;
+        }
+      `}</style>
+    </>
   )
 }
 
