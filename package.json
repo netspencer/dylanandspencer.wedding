@@ -34,7 +34,7 @@
     "scrollama": "^2.0.1",
     "tachyons": "^4.11.1",
     "turbolinks": "^5.2.0",
-    "@mdx-js/mdx": "0.15.0-0",
-    "@zeit/next-mdx": "1.1.0"
+    "@mdx-js/loader": "^1.5.1",
+    "@next/mdx": "^9.1.1"
   }
 }

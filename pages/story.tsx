@@ -1,14 +1,15 @@
 import React from 'react'
 import { NextPage } from 'next'
 import Layout from '../components/Layout'
-import Story from '../content/story.mdx'
+import StoryDocument from '../content/story.mdx'
+import StoryWrapper from '../components/StoryWrapper'
 
 const StoryPage: NextPage = () => {
   return (
     <Layout>
-      <article className="mv6">
-        <Story />
-      </article>
+      <StoryWrapper>
+        <StoryDocument />
+      </StoryWrapper>
 
       {/* <section className="step dt w-100 relative">
                 <div className="dtc v-mid wedding-gray ph3 ph4-l">
