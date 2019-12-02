@@ -65,11 +65,12 @@ const Postcard: FunctionComponent = () => {
           'mt-4',
           'w-full',
           'p-2',
-          'wedding-gray'
+          'wedding-gray',
+          'text-center'
         )}
       >
-        <h3 className="fatface f2 fw4 lh-title ma0 mb2">May 24, 2020</h3>
-        <p className="f5 f4-l libre ma0 lh-copy">
+        <h3 className={classNames('fatface', 'text-3xl')}>May 24, 2020</h3>
+        <p className={classNames('text-l', 'libre', 'leading-normal')}>
           Hummingbird Nest Ranch
           <br />
           Simi Valley, CA
