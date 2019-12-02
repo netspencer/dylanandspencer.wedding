@@ -28,7 +28,15 @@ const Layout: FunctionComponent<Props> = ({
         toggleNavVisibility={toggleNavVisibility}
         sticky={pathname != '/'}
       />
-      <main>{children}</main>
+      <main className={classNames({ blur: isNavVisible })}>{children}</main>
+      <style jsx>{`
+        main {
+          transition: all 0.3s;
+        }
+        .blur {
+          filter: blur(15px);
+        }
+      `}</style>
     </div>
   )
 }

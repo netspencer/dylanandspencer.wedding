@@ -2,9 +2,11 @@ import React, { FunctionComponent } from 'react'
 import Link from 'next/link'
 import classNames from 'classnames'
 
-const RootNavigationItem: FunctionComponent = () => (
+const RootNavigationItem: FunctionComponent<{
+  onClick?: () => void
+}> = ({ onClick }) => (
   <Link href="/">
-    <a className={classNames('wedding-gray')} title="Home">
+    <a onClick={onClick} className={classNames('wedding-gray')} title="Home">
       <h1
         className={classNames(
           'fatface',
@@ -24,12 +26,15 @@ const NavigationItem: FunctionComponent<{
   href: string
   final?: boolean
   mobile?: boolean
-}> = ({ title, href, final, mobile }) => (
+  onClick?: () => void
+}> = ({ title, href, final, mobile, onClick }) => (
   <>
     <Link href={href}>
       <a
+        onClick={onClick}
         className={classNames('libre', 'wedding-gray', 'text-xl', {
-          'mr-8': !mobile && !final
+          'mr-8': !mobile && !final,
+          'my-3': mobile
         })}
         title={title}
       >
@@ -58,9 +63,12 @@ const NavToggle: FunctionComponent<{
   </div>
 )
 
-const MobileNav: FunctionComponent<{ hidden: boolean }> = ({ hidden }) => (
+const MobileNav: FunctionComponent<{
+  hidden: boolean
+  onSelect: () => void
+}> = ({ hidden, onSelect }) => (
   <nav
-    style={{ backgroundColor: 'rgba(255,255,255,0.85)' }}
+    style={{ backgroundColor: 'rgba(255,255,255,0.35)' }}
     className={classNames(
       { hidden: hidden, block: !hidden },
       'left-0',
@@ -78,11 +86,26 @@ const MobileNav: FunctionComponent<{ hidden: boolean }> = ({ hidden }) => (
       'h-screen'
     )}
   >
-    <NavigationItem mobile href="/story" title="Our Story" />
-    <NavigationItem mobile href="/memories" title="Memories" />
-    <NavigationItem mobile href="/wedding" title="The Big Day" />
-    <NavigationItem mobile href="/registry" title="Registry" />
-    <NavigationItem mobile href="/rsvp" title="RSVP" />
+    <NavigationItem onClick={onSelect} mobile href="/story" title="Our Story" />
+    <NavigationItem
+      onClick={onSelect}
+      mobile
+      href="/memories"
+      title="Memories"
+    />
+    <NavigationItem
+      onClick={onSelect}
+      mobile
+      href="/wedding"
+      title="The Big Day"
+    />
+    <NavigationItem
+      onClick={onSelect}
+      mobile
+      href="/registry"
+      title="Registry"
+    />
+    <NavigationItem onClick={onSelect} mobile href="/rsvp" title="RSVP" />
   </nav>
 )
 
@@ -108,11 +131,20 @@ const Header: FunctionComponent<{
           'z-50'
         )}
       >
-        <RootNavigationItem />
+        <RootNavigationItem
+          onClick={() => {
+            toggleNavVisibility(false)
+          }}
+        />
         <DesktopNav />
         <NavToggle hidden={!isNavVisible} toggle={toggleNavVisibility} />
       </header>
-      <MobileNav hidden={!isNavVisible} />
+      <MobileNav
+        onSelect={() => {
+          toggleNavVisibility(false)
+        }}
+        hidden={!isNavVisible}
+      />
     </>
   )
 }
