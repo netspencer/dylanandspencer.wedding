@@ -1,14 +1,26 @@
 import 'resize-observer-polyfill'
-import React, { FunctionComponent } from 'react'
+import React, { FunctionComponent, useContext } from 'react'
 import useTiltEffect from '../lib/useTiltEffect'
 import classNames from 'classnames'
+import { NavVisibility } from './Layout'
+import { useMedia } from 'react-use'
 
 const Postcard: FunctionComponent = () => {
   const { containerRef, imageRef, captionRef, shineRef } = useTiltEffect()
+  const isMobile = useMedia('(max-width: 640px)')
+  const [_, toggleNavVisibility] = useContext(NavVisibility)
 
   return (
     <section className={classNames('select-none', 'relative')}>
-      <article ref={containerRef} className={classNames('mx-auto')}>
+      <article
+        ref={containerRef}
+        className={classNames('mx-auto')}
+        onClick={() => {
+          if (isMobile) {
+            toggleNavVisibility(true)
+          }
+        }}
+      >
         <figure ref={imageRef}>
           <img src="/photoshoot/12.jpg" alt="Spencer and Dylan in a park" />
           <summary>

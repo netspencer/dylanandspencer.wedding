@@ -12,7 +12,7 @@ const RootNavigationItem: FunctionComponent<{
         className={classNames(
           'fatface',
           'text-3xl',
-          'md:text-4xl',
+          'sm:text-4xl',
           'font-bold'
         )}
       >
@@ -46,7 +46,7 @@ const NavigationItem: FunctionComponent<{
 )
 
 const DesktopNav: FunctionComponent = () => (
-  <nav className={classNames('hidden', 'md:block')}>
+  <nav className={classNames('hidden', 'sm:block')}>
     <NavigationItem href="/story" title="Our Story" />
     <NavigationItem href="/memories" title="Memories" />
     <NavigationItem href="/wedding" title="The Big Day" />
@@ -59,7 +59,7 @@ const NavToggle: FunctionComponent<{
   toggle: (nextValue?: any) => void
   hidden: boolean
 }> = ({ toggle, hidden }) => (
-  <div className={classNames('block', 'md:hidden')} onClick={toggle}>
+  <div className={classNames('block', 'sm:hidden')} onClick={toggle}>
     {hidden ? 'OFF' : 'ON'}
   </div>
 )
@@ -76,7 +76,7 @@ const MobileNav: FunctionComponent<{
       'top-0',
       'bottom-0',
       'fixed',
-      'md:hidden',
+      'sm:hidden',
       'z-40',
       'min-h-screen',
       'flex',
@@ -135,8 +135,8 @@ const Header: FunctionComponent<{
           'items-center',
           'justify-between',
           'p-4',
-          'md:p-8',
-          'md:px-16',
+          'sm:p-8',
+          'sm:px-16',
           'z-50'
         )}
       >
