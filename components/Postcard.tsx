@@ -7,7 +7,7 @@ const Postcard: FunctionComponent = () => {
   const { containerRef, imageRef, captionRef, shineRef } = useTiltEffect()
 
   return (
-    <section>
+    <section className={classNames('select-none')}>
       <article ref={containerRef} className={classNames('mx-auto')}>
         <figure ref={imageRef}>
           <img src="/photoshoot/12.jpg" alt="Spencer and Dylan in a park" />
