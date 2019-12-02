@@ -2,13 +2,17 @@ import React, { FunctionComponent } from 'react'
 import Link from 'next/link'
 import classNames from 'classnames'
 
-interface Props {
+interface ItemProps {
   title: string
   href: string
   final?: boolean
 }
 
-const NavigationItem: FunctionComponent<Props> = ({ title, href, final }) => (
+const NavigationItem: FunctionComponent<ItemProps> = ({
+  title,
+  href,
+  final
+}) => (
   <>
     <Link href={href}>
       <a
@@ -23,10 +27,15 @@ const NavigationItem: FunctionComponent<Props> = ({ title, href, final }) => (
   </>
 )
 
-const Navigation: FunctionComponent = () => (
+interface Props {
+  sticky?: boolean
+}
+
+const Navigation: FunctionComponent<Props> = ({ sticky = true }) => (
   <nav
     className={classNames(
-      'sticky',
+      'fixed',
+      { sticky: sticky },
       'top-0',
       'w-full',
       'flex',

@@ -1,13 +1,14 @@
 import 'resize-observer-polyfill'
 import React, { FunctionComponent } from 'react'
 import useTiltEffect from '../lib/useTiltEffect'
+import classNames from 'classnames'
 
 const Postcard: FunctionComponent = () => {
   const { containerRef, imageRef, captionRef, shineRef } = useTiltEffect()
 
   return (
     <section>
-      <article ref={containerRef} className="z-5 center">
+      <article ref={containerRef} className={classNames('mx-auto')}>
         <figure ref={imageRef}>
           <img src="/photoshoot/12.jpg" alt="Spencer and Dylan in a park" />
           <summary>
@@ -15,18 +16,42 @@ const Postcard: FunctionComponent = () => {
           </summary>
           <figcaption
             ref={captionRef}
-            className="db-ns dn tl absolute bottom-0 w-100 pa5"
+            className={classNames(
+              'hidden',
+              'md:block',
+              'absolute',
+              'bottom-0',
+              'w-full',
+              'p-10'
+            )}
           >
-            <h3 className="fatface f-subheadline-l f1-m f2 wedding-cream fw4 lh-title ma0 mb2">
+            <h3
+              className={classNames(
+                'fatface',
+                'text-6xl',
+                'wedding-cream',
+                'font-normal',
+                'mb-2'
+              )}
+            >
               May 24, 2020
             </h3>
-            <p className="f3-l f4 libre ma0 lh-copy wedding-cream">
+            <p className={classNames('text-2xl', 'wedding-cream', 'libre')}>
               Hummingbird Nest Ranch &bull; Simi Valley, CA
             </p>
           </figcaption>
         </figure>
       </article>
-      <aside className="dn-ns db mt3 w-100 pa3 wedding-gray">
+      <aside
+        className={classNames(
+          'block',
+          'md:hidden',
+          'mt-4',
+          'w-full',
+          'p-2',
+          'wedding-gray'
+        )}
+      >
         <h3 className="fatface f2 fw4 lh-title ma0 mb2">May 24, 2020</h3>
         <p className="f5 f4-l libre ma0 lh-copy">
           Hummingbird Nest Ranch
