@@ -4,23 +4,34 @@ import classNames from 'classnames'
 
 const components: Components = {
   h1: ({ children }) => (
-    <h1 className={classNames('text-xl', 'md:text-3xl', 'leading-snug')}>
+    <h1
+      className={classNames(
+        'opensans',
+        'font-bold',
+        'text-xl',
+        'md:text-3xl',
+        'leading-snug'
+      )}
+    >
       {children}
     </h1>
   ),
   h2: ({ children }) => (
-    <h2 className={classNames('text-xl', 'md:text-3xl', 'leading-snug')}>
+    <h2
+      className={classNames(
+        'opensans',
+        'font-bold',
+        'text-xl',
+        'md:text-3xl',
+        'leading-snug'
+      )}
+    >
       {children}
     </h2>
   ),
   h3: ({ children }) => (
     <p
-      className={classNames(
-        'leading-relaxed',
-        'text-xl',
-        'md:text-2xl',
-        'my-6'
-      )}
+      className={classNames('leading-relaxed', 'text-l', 'md:text-2xl', 'my-6')}
     >
       {children}
     </p>
