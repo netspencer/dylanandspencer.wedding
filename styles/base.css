@@ -3,5 +3,5 @@
 html,
 body {
   scroll-behavior: smooth;
-  @apply bg-wedding-tan;
+  @apply bg-wedding-cream;
 }

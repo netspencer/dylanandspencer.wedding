@@ -127,8 +127,7 @@ const Header: FunctionComponent<{
     <>
       <header
         className={classNames(
-          'fixed',
-          { sticky: sticky },
+          { sticky: sticky, fixed: !sticky },
           'top-0',
           'w-full',
           'flex',
@@ -154,6 +153,11 @@ const Header: FunctionComponent<{
         }}
         hidden={!isNavVisible}
       />
+      <style jsx>{`
+        header {
+          background: #faf6e9ee;
+        }
+      `}</style>
     </>
   )
 }
