@@ -1,8 +1,8 @@
-@import url('https://fonts.googleapis.com/css?family=Abril+Fatface|Didact+Gothic|Libre+Baskerville&display=swap');
-@import './shared.css';
-
 /* purgecss start ignore */
-@tailwind base;
+@import 'tailwindcss/base';
+@import './base.css';
 /* purgecss end ignore */
-@tailwind components;
-@tailwind utilities;
+@import 'tailwindcss/components';
+@import './components.css';
+@import 'tailwindcss/utilities';
+@import './utilities.css';
