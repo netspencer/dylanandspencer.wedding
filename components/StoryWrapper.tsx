@@ -17,7 +17,7 @@ const StoryWrapper: FunctionComponent = ({ children }) => (
       'max-w-3xl',
       'mx-4',
       'md:mx-auto',
-      'md:py-48'
+      'md:py-16'
     )}
   >
     <MDXProvider components={components}>{children}</MDXProvider>
