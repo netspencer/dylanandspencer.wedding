@@ -2,6 +2,7 @@ import React, { FunctionComponent, useContext } from 'react'
 import Link from 'next/link'
 import classNames from 'classnames'
 import { NavVisibility } from './Layout'
+import { useRouter } from 'next/router'
 
 const RootNavigationItem: FunctionComponent<{
   onClick?: () => void
@@ -122,6 +123,7 @@ const MobileNav: FunctionComponent<{
 const Header: FunctionComponent<{
   sticky: boolean
 }> = ({ sticky }) => {
+  const router = useRouter()
   const [isNavVisible, toggleNavVisibility] = useContext(NavVisibility)
   return (
     <>
@@ -136,7 +138,8 @@ const Header: FunctionComponent<{
           'p-4',
           'sm:p-8',
           'sm:px-16',
-          'z-50'
+          { 'has-bg': !isNavVisible },
+          { 'z-50': router.pathname != '/' }
         )}
       >
         <RootNavigationItem
@@ -154,7 +157,7 @@ const Header: FunctionComponent<{
         hidden={!isNavVisible}
       />
       <style jsx>{`
-        header {
+        .has-bg {
           background: #faf6e9ee;
         }
       `}</style>
