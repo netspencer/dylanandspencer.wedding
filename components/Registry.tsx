@@ -7,7 +7,7 @@ const Registry: FunctionComponent = () => {
   const [didLoad, setDidLoad] = useState(false)
 
   return (
-    <div className={classNames('md:pb-16')}>
+    <div className={classNames('md:pb-32')}>
       {!didLoad && <Loading />}
       <Iframe
         style={{ transition: 'opacity 1s' }}
