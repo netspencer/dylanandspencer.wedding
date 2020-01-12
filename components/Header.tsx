@@ -29,22 +29,24 @@ const NavigationItem: FunctionComponent<{
   final?: boolean
   mobile?: boolean
   onClick?: () => void
-}> = ({ title, href, final, mobile, onClick }) => (
-  <>
+}> = ({ title, href, final, mobile, onClick }) => {
+  const router = useRouter()
+  return (
     <Link href={href}>
       <a
         onClick={onClick}
         className={classNames('libre', 'wedding-gray', 'text-xl', {
           'mr-8': !mobile && !final,
-          'my-3': mobile
+          'my-3': mobile,
+          'font-bold': router.pathname == href
         })}
         title={title}
       >
         {title}
       </a>
     </Link>
-  </>
-)
+  )
+}
 
 const DesktopNav: FunctionComponent = () => (
   <nav className={classNames('hidden', 'sm:block')}>
