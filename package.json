@@ -21,6 +21,8 @@
     "next": "^9.1.7",
     "react": "^16.10.1",
     "react-dom": "^16.10.1",
+    "react-images": "^1.1.0-beta.2",
+    "react-photo-gallery": "^8.0.0",
     "react-use": "^13.5.0",
     "resize-observer-polyfill": "^1.5.1",
     "scrollama": "^2.0.1"
