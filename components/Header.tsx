@@ -54,7 +54,6 @@ const DesktopNav: FunctionComponent = () => (
     <NavigationItem href="/memories" title="Memories" />
     <NavigationItem href="/wedding" title="The Big Day" />
     <NavigationItem href="/registry" title="Registry" />
-    <NavigationItem final href="/rsvp" title="RSVP" />
   </nav>
 )
 
@@ -109,7 +108,6 @@ const MobileNav: FunctionComponent<{
       href="/registry"
       title="Registry"
     />
-    <NavigationItem onClick={onSelect} mobile href="/rsvp" title="RSVP" />
     {!hidden && (
       <style jsx global>{`
         html,
