@@ -21,7 +21,19 @@ const PhotoGallery: FunctionComponent = () => {
 
   return (
     <div>
-      <Gallery photos={photos} onClick={openLightbox} />
+      <Gallery
+        direction="row"
+        targetRowHeight={containerWidth => {
+          if (containerWidth > 1280) {
+            return 500
+          } else if (containerWidth > 768) {
+            return 400
+          }
+          return 300
+        }}
+        photos={photos}
+        onClick={openLightbox}
+      />
       <ModalGateway>
         {viewerIsOpen ? (
           <Modal onClose={closeLightbox}>
