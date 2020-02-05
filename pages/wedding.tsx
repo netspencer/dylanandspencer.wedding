@@ -24,7 +24,7 @@ const WeddingPage: NextPage = () => {
             <PartyMemberBio
               name="Taylor Hasselhoff"
               image="/people/taylor-hasselhoff.jpg"
-              bio="hello blah"
+              bio="Coming soon"
             />
             <PartyMemberBio
               name="Olivia Wachsberger"
@@ -47,13 +47,22 @@ Quite frankly, Spen, I’m jealous."
               name="Amanda Marmer"
               bio="Dylan cals me A.. man. Dylan and I met in high school because we were both on the tennis team. I’m so grateful that we’ve remained friends ever since. One thing that hasn’t changed about her is that she’s ALWAYS the life of the party. We’ve had so many memories (& most of them I can’t share because let’s just say... they’re not PG). She’s seen me at my happiest, darkest and weirdest times and guess what... she stuck around. If that’s not considered a good friend then I don’t know what is. I’m so excited to welcome Spencer into the family and can’t wait for them to pop out babies. I love you Dylan and Spencer !!"
             />
-            <PartyMemberBio name="Rachel Marmer" bio="hello blah" />
+            <PartyMemberBio name="Rachel Marmer" bio="Coming soon" />
             <PartyMemberBio
               name="Isabella Guetta"
               image="/people/isabella-guetta.jpg"
               bio="Hello! My name is Izzy. I’m pretty sure I’m one of Dylan’s oldest friends. We met in 5th grade when she was exploring her interests in Jewish academia and transferred to Shalhevet. Dylan always has such vibrant and positive energy! My most fond memories are from high school. One time Dylan and I played secret agents at Starbucks during a friends blind date. We dressed up in Starbucks attire and successfully accomplished the mission. Although, we don’t see each other to frequently, I always look forward to seeing her and Spencer on double dates or Shabbat dinners. I am certain we will be in each others lives for ever. Congrats Dyl and Spencer!"
             />
-            <PartyMemberBio name="Jennifer Hourani" bio="hello blah" />
+            <PartyMemberBio name="Jennifer Hourani" bio="Coming soon" />
+
+            <PartyMemberBio name="Hunter Owens" bio="Coming soon" />
+            <PartyMemberBio name="Sam Madden" bio="Coming soon" />
+            <PartyMemberBio name="Evan Cover" bio="Coming soon" />
+            <PartyMemberBio name="Greg Ah-Fenne" bio="Coming soon" />
+            <PartyMemberBio name="JD Remington" bio="Coming soon" />
+            <PartyMemberBio name="Tyler Macdonald" bio="Coming soon" />
+            <PartyMemberBio name="Will Strimling" bio="Coming soon" />
+            <PartyMemberBio name="Sully Taylor" bio="Coming soon" />
           </div>
         </section>
       </div>
