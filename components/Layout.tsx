@@ -1,21 +1,26 @@
 import React, { FunctionComponent, createContext, useContext } from 'react'
 import Head from 'next/head'
-import Header from './Header'
 import classNames from 'classnames'
 import { useRouter } from 'next/router'
 import { useToggle } from 'react-use'
 
+import Header from './Header'
+
 interface Props {
   title?: string
+  className?: string
 }
 
 const initialValue: [boolean, (nextValue?: any) => void] = [false, () => {}]
 export const NavVisibility = createContext(initialValue)
 
-const BlurContainer: FunctionComponent = ({ children }) => {
+const BlurContainer: FunctionComponent<{ className?: string }> = ({
+  children,
+  className
+}) => {
   const [isNavVisible] = useContext(NavVisibility)
   return (
-    <main className={classNames({ blur: isNavVisible })}>
+    <main className={classNames({ blur: isNavVisible }, className)}>
       {children}
       <style jsx>{`
         main {
@@ -31,7 +36,8 @@ const BlurContainer: FunctionComponent = ({ children }) => {
 
 const Layout: FunctionComponent<Props> = ({
   children,
-  title = 'May 24, 2020'
+  title = 'May 24, 2020',
+  className
 }) => {
   const { pathname } = useRouter()
 
@@ -47,7 +53,7 @@ const Layout: FunctionComponent<Props> = ({
           <meta http-equiv="X-UA-Compatible" content="ie=edge" />
         </Head>
         <Header sticky={pathname != '/'} />
-        <BlurContainer children={children} />
+        <BlurContainer className={className} children={children} />
       </div>
     </NavVisibility.Provider>
   )

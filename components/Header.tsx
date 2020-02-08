@@ -1,8 +1,9 @@
 import React, { FunctionComponent, useContext } from 'react'
 import Link from 'next/link'
 import classNames from 'classnames'
-import { NavVisibility } from './Layout'
 import { useRouter } from 'next/router'
+
+import { NavVisibility } from './Layout'
 
 const RootNavigationItem: FunctionComponent<{
   onClick?: () => void

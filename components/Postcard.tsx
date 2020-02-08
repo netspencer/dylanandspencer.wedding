@@ -1,9 +1,10 @@
 import 'resize-observer-polyfill'
 import React, { FunctionComponent, useContext } from 'react'
-import useTiltEffect from '../lib/useTiltEffect'
 import classNames from 'classnames'
-import { NavVisibility } from './Layout'
 import { useMedia } from 'react-use'
+
+import useTiltEffect from '../lib/useTiltEffect'
+import { NavVisibility } from './Layout'
 
 const Postcard: FunctionComponent = () => {
   const { containerRef, imageRef, captionRef, shineRef } = useTiltEffect()
