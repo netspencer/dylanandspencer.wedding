@@ -5,17 +5,6 @@ import PartyMemberBio from './PartyMemberBio'
 
 const WeddingParty: FunctionComponent = () => (
   <section className={classNames('container', 'mx-auto')}>
-    <h1
-      className={classNames(
-        'libre',
-        'text-center',
-        'text-3xl',
-        'font-bold',
-        'p-6'
-      )}
-    >
-      The Wedding Party
-    </h1>
     <div className={classNames('flex', 'flex-wrap')}>
       <PartyMemberBio
         name="Taylor Hasselhoff"

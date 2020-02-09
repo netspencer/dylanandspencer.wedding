@@ -3,14 +3,14 @@ import { NextPage } from 'next'
 import classNames from 'classnames'
 
 import Layout from '../components/Layout'
-import WeddingDetails from '../components/WeddingDetails'
+import WeddingParty from '../components/WeddingParty'
 
-const WeddingPage: NextPage = () => {
+const WeddingPartyPage: NextPage = () => {
   return (
     <Layout className={classNames('pb-12', 'md:pb-32')}>
-      <WeddingDetails />
+      <WeddingParty />
     </Layout>
   )
 }
 
-export default WeddingPage
+export default WeddingPartyPage
