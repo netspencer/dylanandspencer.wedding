@@ -14,7 +14,7 @@ const WeddingParty: FunctionComponent = () => (
       <PartyMemberBio
         name="Olivia Wachsberger"
         bio="My name is Olivia but I’m happy to go by Ollie, Olive, Oleeeve, or my new gangster rap name, “DaCheese”.
-Although I haven’t known Dylan “Dildo” Newman for long, I feel as if I’ve known her for hundreds of lifetimes. (best friends in the Ming Dynasty— what up!) Her essence transcends time and space and her spirit is with me constantly — wether it be in person, in thought, or during our hourly FaceTimes.
+Although I haven’t known Dylan “Dildo” Newman for long, I feel as if I’ve known her for hundreds of lifetimes. (best friends in the Ming Dynasty— what up!) Her essence transcends time and space and her spirit is with me constantly — whether it be in person, in thought, or during our hourly FaceTimes.
 Dylan has become my rock, my mentor, my spiritual advisor, and my best friend.
 Quite frankly, Spen, I’m jealous."
       />
