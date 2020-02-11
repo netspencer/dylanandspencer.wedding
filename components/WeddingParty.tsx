@@ -9,7 +9,9 @@ const WeddingParty: FunctionComponent = () => (
       <PartyMemberBio
         name="Taylor Hasselhoff"
         image="/people/taylor-hasselhoff.jpg"
-        bio="Coming soon"
+        bio="Hiiii!! My name is Tay:) wow, I could not be more excited that this day has finally come. I met Dylan years ago thru mutual friends and realized we are the EXACT SAME WEIRD AND WEIRDLY CONNECTED TO EACH OTHER HUMAN. We instantly became best friends and I honestly could not imagine my life without her. She makes me laugh harder than anyone else and is the definition of my ride or die whose always got my back and ALWAYS there for me.  I can honestly be in my purest form every time I am with her whether that is sad, happy, hyper, confused, irritated with life, she makes me feel normal haha! 
+No but really in all seriousness I love Dylan and Spencer so much and could not imagine my life without these two dingles! Dingles btw is the highest form of love in my book. What a celebration of pure love and happiness we have blessing our way! Dylan and Spencer were absolutely meant for each other and are the true definition of YING AND YANG. I cant wait to be apart of this journey in seeing my extraordinary, beautiful Best Friend walk down the isle to meet her forever Prince Charming. Get ready ladies and gentlemen for the overflow of tissues. CHEERS TO LOVE AND MY BFF GETTING MARRIED TO HER SWEETIE ! 
+XOXO"
       />
       <PartyMemberBio
         name="Olivia Wachsberger"
