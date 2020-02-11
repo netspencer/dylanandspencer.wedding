@@ -147,7 +147,7 @@ const Header: FunctionComponent<{
           'sm:p-8',
           'sm:px-16',
           { 'has-bg': !isNavVisible },
-          { 'z-50': router.pathname != '/' }
+          { 'z-50': isNavVisible || router.pathname != '/' }
         )}
       >
         <RootNavigationItem
