@@ -50,8 +50,12 @@ So, I can’t imagine anyone luckier than Spencer right now. I wish Dylan and Sp
       />
 
       <PartyMemberBio name="Hunter Owens" bio="Coming soon" />
+      <PartyMemberBio
+        name="Evan Cover"
+        image="/people/evan-cover.jpg"
+        bio="Coming soon"
+      />
       <PartyMemberBio name="Sam Madden" bio="Coming soon" />
-      <PartyMemberBio name="Evan Cover" bio="Coming soon" />
       <PartyMemberBio name="Greg Ah-Fenne" bio="Coming soon" />
       <PartyMemberBio name="JD Remington" bio="Coming soon" />
       <PartyMemberBio name="Tyler Macdonald" bio="Coming soon" />
