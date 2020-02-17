@@ -51,7 +51,11 @@ These are the qualities many people look for in life experiences, but few actual
 So, I can’t imagine anyone luckier than Spencer right now. I wish Dylan and Spencer the absolute sweetest wedding and marriage and can’t wait to be standing next to her every step of the way."
       />
 
-      <PartyMemberBio name="Hunter Owens" bio="Coming soon" />
+      <PartyMemberBio
+        name="Hunter Owens"
+        image="/people/hunter-owens.jpg"
+        bio="Spencer and I met on Twitter over a decade ago and my life would not be the same without him. He got me into Silicon Valley, got me my first real job, and has brought multiple ideas that I’ve had in my head to life. We’ve never stopped collaborating on projects and I’m immensely grateful for his extraordinary talents. I couldn’t be more excited that he’s now joining forces with his perfect life partner, Dylan. I’ve loved Dylan just as much from my very first iteration with her and I’m thrilled to celebrate their future together. Dylan can read the universe and Spencer can put a dent in it."
+      />
       <PartyMemberBio
         name="Evan Cover"
         image="/people/evan-cover.jpg"
@@ -59,7 +63,11 @@ So, I can’t imagine anyone luckier than Spencer right now. I wish Dylan and Sp
       />
       <PartyMemberBio name="Sam Madden" bio="Coming soon" />
       <PartyMemberBio name="Greg Ah-Fenne" bio="Coming soon" />
-      <PartyMemberBio name="JD Remington" bio="Coming soon" />
+      <PartyMemberBio
+        name="JD Remington"
+        image="/people/jd-remington.jpg"
+        bio="Spencer and I started following each other on Twitter about 10 years ago. Back then, and still to this day, Spencer had an incredible free-thinking spirit that I found captivating. Much of our friendship has been spent discussing our approaches to our lives and work. About five years ago, while I was attending USC, Spencer moved to Los Angeles and we had the opportunity to briefly work together in the music industry. We spent many late nights on a couch in West Hollywood discussing how we could empower artists and free them from the record labels. Although we did not succeed in our mission and spent no more than two years on the project, it was during those late nights that I fully grasped just how entrepreneurial and creative Spencer is. Apart from his talents, he is a hilarious and loyal friend, and I am absolutely thrilled for him and Dylan, who is equally as wonderful and gifted as Spencer. Looking forward to meeting all of you and most importantly, having a great time as we celebrate the union of these two great people!"
+      />
       <PartyMemberBio name="Tyler Macdonald" bio="Coming soon" />
       <PartyMemberBio name="Will Strimling" bio="Coming soon" />
       <PartyMemberBio name="Sully Taylor" bio="Coming soon" />
