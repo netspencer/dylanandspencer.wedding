@@ -50,6 +50,9 @@ const PhotoGallery: FunctionComponent = () => {
           margin-left: auto;
           margin-right: auto;
         }
+        .react-photo-gallery--gallery > div {
+          align-items: start;
+        }
       `}</style>
     </div>
   )
