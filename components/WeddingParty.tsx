@@ -59,7 +59,7 @@ So, I can’t imagine anyone luckier than Spencer right now. I wish Dylan and Sp
       <PartyMemberBio
         name="Evan Cover"
         image="/people/evan-cover.jpg"
-        bio="Coming soon"
+        bio="Hey there, I’m Evan. I met Spencer during our time at Tufts. Like all great friendships, we had a ton of fun but also were there for each other when things got tough. Even though Spencer may wear glasses, his perspective and vision of the world is clearer than most. His perspective on all things is unique, refreshing, and energizing. He has introduced me to a whole new frontier of people and thoughts. I’ll forever be grateful for his humor, book recommendations, and love of rotten grapes. I am incredibly excited about the partnership that is Dylan and Spencer - Never before have I seen him so happy and at ease with another person. I cannot wait to see what these two will do together!"
       />
       <PartyMemberBio name="Sam Madden" bio="Coming soon" />
       <PartyMemberBio name="Greg Ah-Fenne" bio="Coming soon" />
