@@ -59,17 +59,25 @@ So, I can’t imagine anyone luckier than Spencer right now. I wish Dylan and Sp
       <PartyMemberBio
         name="Evan Cover"
         image="/people/evan-cover.jpg"
-        bio="Coming soon"
+        bio="Hey there, I’m Evan. I met Spencer during our time at Tufts. Like all great friendships, we had a ton of fun but also were there for each other when things got tough. Even though Spencer may wear glasses, his perspective and vision of the world is clearer than most. His perspective on all things is unique, refreshing, and energizing. He has introduced me to a whole new frontier of people and thoughts. I’ll forever be grateful for his humor, book recommendations, and love of rotten grapes. I am incredibly excited about the partnership that is Dylan and Spencer - Never before have I seen him so happy and at ease with another person. I cannot wait to see what these two will do together!"
       />
       <PartyMemberBio name="Sam Madden" bio="Coming soon" />
-      <PartyMemberBio name="Greg Ah-Fenne" bio="Coming soon" />
+      <PartyMemberBio
+        name="Greg Ah-Fenne"
+        image="/people/greg-ahfenne.jpg"
+        bio="Coming soon"
+      />
       <PartyMemberBio
         name="JD Remington"
         image="/people/jd-remington.jpg"
         bio="Spencer and I started following each other on Twitter about 10 years ago. Back then, and still to this day, Spencer had an incredible free-thinking spirit that I found captivating. Much of our friendship has been spent discussing our approaches to our lives and work. About five years ago, while I was attending USC, Spencer moved to Los Angeles and we had the opportunity to briefly work together in the music industry. We spent many late nights on a couch in West Hollywood discussing how we could empower artists and free them from the record labels. Although we did not succeed in our mission and spent no more than two years on the project, it was during those late nights that I fully grasped just how entrepreneurial and creative Spencer is. Apart from his talents, he is a hilarious and loyal friend, and I am absolutely thrilled for him and Dylan, who is equally as wonderful and gifted as Spencer. Looking forward to meeting all of you and most importantly, having a great time as we celebrate the union of these two great people!"
       />
       <PartyMemberBio name="Tyler Macdonald" bio="Coming soon" />
-      <PartyMemberBio name="Will Strimling" bio="Coming soon" />
+      <PartyMemberBio
+        name="Will Strimling"
+        image="/people/will-strimling.jpg"
+        bio="I met Spencer 10 years ago, and it’s clear now that it was one of the most impactful moments of my life. He’s one of the most generous people I have ever met. So many of the people I know, the opportunities I’ve had, and the best characteristics of who I am, I can trace directly back to him and his influence on me. It’s remarkable how much smaller my professional world would be if not for him. Despite this, our friendship has always been way more than professional. We’re both extremely passionate people, and I can’t think of anyone who I’ve felt more connected with in our interests—whether it be going to musical festivals together, starting companies together, Marathoning Gossip Girl, or exploring cities and taking photos. Spencer is like family. I was so thrilled when I met Dylan, and saw how she made him light up—it’s clear she is his perfect complement; and he hers! I am touched to be a part of their ceremony and to celebrate their lives together."
+      />
       <PartyMemberBio name="Sully Taylor" bio="Coming soon" />
     </div>
   </section>
