@@ -22,6 +22,7 @@ export default class MyApp extends App {
 
     return (
       <>
+        <Favicon />
         <DefaultSeo {...SEO} />
         <Component {...pageProps} />
       </>
