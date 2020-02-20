@@ -17,6 +17,21 @@ const WeddingDetails: FunctionComponent = () => (
         'libre'
       )}
     >
+      <div className={classNames('md:w-2/3', 'w-full', 'mx-auto')}>
+        <EventMap />
+      </div>
+    </section>
+    <section
+      className={classNames(
+        'container',
+        'mx-auto',
+        'px-2',
+        'py-4',
+        'sm:px-8',
+        'text-center',
+        'libre'
+      )}
+    >
       <h1 className={classNames('lg:text-2xl', 'md:text-xl')}>The Wedding</h1>
       <h1 className={classNames('lg:text-3xl', 'md:text-2xl', 'text-lg')}>
         <span className={classNames('sm:inline', 'block')}>
@@ -53,9 +68,9 @@ const WeddingDetails: FunctionComponent = () => (
         'md:flex-no-wrap'
       )}
     >
-      <div className={classNames('md:w-1/2', 'lg:w-2/3', 'w-full', 'md:mr-8')}>
-        <EventMap />
-      </div>
+      <div
+        className={classNames('md:w-1/2', 'lg:w-2/3', 'w-full', 'md:mr-8')}
+      ></div>
       <div
         className={classNames(
           'md:w-1/2',
