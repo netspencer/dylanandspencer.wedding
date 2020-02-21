@@ -54,7 +54,33 @@ const components = (
     <p className={classNames('leading-relaxed', 'md:text-xl', 'my-6')}>
       {children}
     </p>
-  )
+  ),
+  ul: ({ children }) => (
+    <ul
+      className={classNames(
+        'leading-relaxed',
+        'md:text-xl',
+        'my-6',
+        'list-disc'
+      )}
+    >
+      {children}
+    </ul>
+  ),
+  ol: ({ children }) => (
+    <ol
+      className={classNames(
+        'leading-relaxed',
+        'md:text-xl',
+        'my-6',
+        'list-decimal'
+      )}
+    >
+      {children}
+    </ol>
+  ),
+
+  li: ({ children }) => <li className={classNames('my-3')}>{children}</li>
 })
 
 const MDXWrapper: FunctionComponent<Props> = ({

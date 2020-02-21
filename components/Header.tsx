@@ -11,12 +11,16 @@ const RootNavigationItem: FunctionComponent<{
   onClick?: () => void
 }> = ({ onClick }) => (
   <Link href="/">
-    <a onClick={onClick} className={classNames('wedding-gray')} title="Home">
+    <a
+      onClick={onClick}
+      className={classNames('wedding-gray', 'flex-shrink-0')}
+      title="Home"
+    >
       <h1
         className={classNames(
           'fatface',
           'text-3xl',
-          'sm:text-4xl',
+          'lg:text-4xl',
           'font-bold'
         )}
       >
@@ -29,20 +33,27 @@ const RootNavigationItem: FunctionComponent<{
 const NavigationItem: FunctionComponent<{
   title: string
   href: string
-  final?: boolean
   mobile?: boolean
   onClick?: () => void
-}> = ({ title, href, final, mobile, onClick }) => {
+}> = ({ title, href, mobile, onClick }) => {
   const router = useRouter()
   return (
     <Link href={href}>
       <a
         onClick={onClick}
-        className={classNames('libre', 'wedding-gray', 'text-xl', {
-          'mr-8': !mobile && !final,
-          'my-3': mobile,
-          'font-bold': router.pathname == href
-        })}
+        className={classNames(
+          'block',
+          'libre',
+          'wedding-gray',
+          { 'text-xl': mobile },
+          { 'lg:text-lg': !mobile },
+          {
+            'ml-4': !mobile,
+            'xl:ml-8': !mobile,
+            'my-3': mobile,
+            'font-bold': router.pathname == href
+          }
+        )}
         title={title}
       >
         {title}
@@ -52,7 +63,7 @@ const NavigationItem: FunctionComponent<{
 }
 
 const DesktopNav: FunctionComponent = () => (
-  <nav className={classNames('hidden', 'sm:block')}>
+  <nav className={classNames('hidden', 'sm:flex', 'flex-wrap', 'justify-end')}>
     {navigation.pages.map(page => (
       <NavigationItem key={page.href} href={page.href} title={page.title} />
     ))}
@@ -129,7 +140,6 @@ const Header: FunctionComponent<{
           'justify-between',
           'p-4',
           'sm:p-8',
-          'sm:px-16',
           { 'has-bg': !isNavVisible },
           { 'z-50': isNavVisible || router.pathname != '/' }
         )}
