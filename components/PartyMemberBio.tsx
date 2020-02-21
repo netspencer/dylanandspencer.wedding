@@ -22,7 +22,10 @@ const PartyMemberBio: FunctionComponent<Props> = ({ name, image, bio }) => (
           />
         )}
       </div>
-      <p className={classNames('libre')}>{bio}</p>
+      <p
+        className={classNames('libre')}
+        dangerouslySetInnerHTML={{ __html: bio }}
+      />
     </div>
     <style jsx>{`
       .photo {
