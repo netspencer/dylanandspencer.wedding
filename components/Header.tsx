@@ -52,8 +52,8 @@ const NavigationItem: FunctionComponent<{
 const DesktopNav: FunctionComponent = () => (
   <nav className={classNames('hidden', 'sm:block')}>
     <NavigationItem href="/story" title="Our Story" />
-    <NavigationItem href="/memories" title="Memories" />
     <NavigationItem href="/party" title="Wedding Party" />
+    <NavigationItem href="/memories" title="Memories" />
     <NavigationItem href="/wedding" title="The Big Day" />
     <NavigationItem href="/registry" title="Registry" />
   </nav>
@@ -95,14 +95,14 @@ const MobileNav: FunctionComponent<{
     <NavigationItem
       onClick={onSelect}
       mobile
-      href="/memories"
-      title="Memories"
+      href="/party"
+      title="Wedding Party"
     />
     <NavigationItem
       onClick={onSelect}
       mobile
-      href="/party"
-      title="Wedding Party"
+      href="/memories"
+      title="Memories"
     />
     <NavigationItem
       onClick={onSelect}
