@@ -77,7 +77,11 @@ So, I can’t imagine anyone luckier than Spencer right now. I wish Dylan and Sp
         image="/people/jd-remington.jpg"
         bio="Spencer and I started following each other on Twitter about 10 years ago. Back then, and still to this day, Spencer had an incredible free-thinking spirit that I found captivating. Much of our friendship has been spent discussing our approaches to our lives and work. About five years ago, while I was attending USC, Spencer moved to Los Angeles and we had the opportunity to briefly work together in the music industry. We spent many late nights on a couch in West Hollywood discussing how we could empower artists and free them from the record labels. Although we did not succeed in our mission and spent no more than two years on the project, it was during those late nights that I fully grasped just how entrepreneurial and creative Spencer is. Apart from his talents, he is a hilarious and loyal friend, and I am absolutely thrilled for him and Dylan, who is equally as wonderful and gifted as Spencer. Looking forward to meeting all of you and most importantly, having a great time as we celebrate the union of these two great people!"
       />
-      <PartyMemberBio name="Tyler Macdonald" bio="Coming soon" />
+      <PartyMemberBio
+        name="Tyler Macdonald"
+        image="/people/tyler-macdonald.jpg"
+        bio="Spencer and I met through a mutual friend at Tufts. Sam Madden introduced us at a party and we became pretty good friends right away. Little did I know that he’d become one of my closest friends. From planning his 21st in Vegas to trips to NY and parties in LA to meeting up him and Dylan in London, every adventure we have had has been unforgettable. Spencer’s positive outlook on life is infectious. He always finds a way to make you smile. He’s shown me that there are so many more ways to look at life. There is never a dull moment. Whether we’re talking about wine, thinking about starting a new business together, analyzing music, or talking about taking a random trip; he always brings a different light to the subject which I am very grateful for. The first time I met Dylan, I knew right away she’d be the one for him. It was almost a trial by fire and I can tell you that story another time… I’m beyond stoked to help celebrate the marriage of these two incredible people!"
+      />
       <PartyMemberBio
         name="Will Strimling"
         image="/people/will-strimling.jpg"
