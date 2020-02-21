@@ -16,7 +16,7 @@ const components = (
       className={classNames(
         { opensans: !useAbril },
         { fatface: useAbril },
-        'font-bold',
+        { 'font-bold': !useAbril },
         { 'text-xl': !useAbril },
         { 'text-2xl': useAbril },
         { 'text-center': centerHeadings },
@@ -32,7 +32,7 @@ const components = (
       className={classNames(
         { opensans: !useAbril },
         { fatface: useAbril },
-        'font-bold',
+        { 'font-bold': !useAbril },
         { 'text-xl': !useAbril },
         { 'text-2xl': useAbril },
         { 'text-center': centerHeadings },
