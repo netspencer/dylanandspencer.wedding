@@ -7,17 +7,16 @@ import classNames from 'classnames'
 import Layout from '../components/Layout'
 import EventMap from '../components/EventMap'
 
-import Content from '../content/details.mdx'
+import Content from '../content/getting-there.mdx'
 import MDXWrapper from '../components/MDXWrapper'
 
 const WeddingPage: NextPage = () => {
   return (
     <Layout className={classNames('pb-12', 'md:pb-32')}>
-      <NextSeo title="The Big Day" />
+      <NextSeo title="Getting There" />
       <MDXWrapper useAbril centerHeadings>
         <Content />
       </MDXWrapper>
-      <EventMap />
     </Layout>
   )
 }

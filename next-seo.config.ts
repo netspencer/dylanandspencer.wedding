@@ -4,7 +4,6 @@ const SEO: NextSeoProps = {
   titleTemplate: '%s - Dylan & Spencer',
   description:
     'Dylan Michelle Newman & Spencer Davis Schoeben are getting married on May 24, 2020.',
-  canonical: 'https://dylanandspencer.wedding/',
   openGraph: {
     type: 'website',
     locale: 'en_IE',

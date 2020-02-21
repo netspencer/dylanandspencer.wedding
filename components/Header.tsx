@@ -5,6 +5,8 @@ import { useRouter } from 'next/router'
 
 import { NavVisibility } from './Layout'
 
+import navigation from '../content/navigation'
+
 const RootNavigationItem: FunctionComponent<{
   onClick?: () => void
 }> = ({ onClick }) => (
@@ -51,11 +53,9 @@ const NavigationItem: FunctionComponent<{
 
 const DesktopNav: FunctionComponent = () => (
   <nav className={classNames('hidden', 'sm:block')}>
-    <NavigationItem href="/story" title="Our Story" />
-    <NavigationItem href="/party" title="Wedding Party" />
-    <NavigationItem href="/memories" title="Memories" />
-    <NavigationItem href="/wedding" title="The Big Day" />
-    <NavigationItem href="/registry" title="Registry" />
+    {navigation.pages.map(page => (
+      <NavigationItem key={page.href} href={page.href} title={page.title} />
+    ))}
   </nav>
 )
 
@@ -91,31 +91,15 @@ const MobileNav: FunctionComponent<{
       'h-screen'
     )}
   >
-    <NavigationItem onClick={onSelect} mobile href="/story" title="Our Story" />
-    <NavigationItem
-      onClick={onSelect}
-      mobile
-      href="/party"
-      title="Wedding Party"
-    />
-    <NavigationItem
-      onClick={onSelect}
-      mobile
-      href="/memories"
-      title="Memories"
-    />
-    <NavigationItem
-      onClick={onSelect}
-      mobile
-      href="/wedding"
-      title="The Big Day"
-    />
-    <NavigationItem
-      onClick={onSelect}
-      mobile
-      href="/registry"
-      title="Registry"
-    />
+    {navigation.pages.map(page => (
+      <NavigationItem
+        key={page.href}
+        onClick={onSelect}
+        mobile
+        href={page.href}
+        title={page.title}
+      />
+    ))}
     {!hidden && (
       <style jsx global>{`
         html,

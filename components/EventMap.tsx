@@ -1,7 +1,7 @@
 import React, { FunctionComponent } from 'react'
 import classNames from 'classnames'
 
-const EventMap: FunctionComponent = () => (
+const Map: FunctionComponent = () => (
   <article
     className={classNames(
       'relative',
@@ -29,6 +29,30 @@ const EventMap: FunctionComponent = () => (
       }
     `}</style>
   </article>
+)
+
+const EventMap: FunctionComponent = () => (
+  <section
+    className={classNames(
+      'container',
+      'mx-auto',
+      'px-2',
+      'pt-4',
+      'pb-2',
+      'sm:px-8',
+      'text-center',
+      'libre'
+    )}
+  >
+    <div className={classNames('md:w-2/3', 'w-full', 'mx-auto')}>
+      <a
+        target="_blank"
+        href="http://maps.apple.com/?address=2940,Kuehner+Drive,Santa+Susana,CA,93063"
+      >
+        <Map />
+      </a>
+    </div>
+  </section>
 )
 
 export default EventMap
