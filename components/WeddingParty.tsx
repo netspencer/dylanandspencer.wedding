@@ -36,7 +36,11 @@ Quite frankly, Spen, I’m jealous."
         image="/people/amanda-marmer.jpg"
         bio="Hi! I'm Amanda. Dylan and I met in high school because we were both on the tennis team. I’m so grateful that we’ve remained friends ever since. One thing that hasn’t changed about her is that she’s ALWAYS the life of the party. We’ve had so many memories (& most of them I can’t share because let’s just say... they’re not PG). She’s seen me at my happiest, darkest and weirdest times and guess what... she stuck around. If that’s not considered a good friend then I don’t know what is. I’m so excited to welcome Spencer into the family and can’t wait for them to pop out babies. I love you Dylan and Spencer !!"
       />
-      <PartyMemberBio name="Rachel Marmer" bio="Coming soon" />
+      <PartyMemberBio
+        name="Rachel Marmer"
+        image="/people/rachel-marmer.jpg"
+        bio="Hii my name is Rachel! I’ve known Dylan since high school. We’ve had some crazy memories together but my most cherished memory was from the time she visited me in the Caribbean while I was in medical school. Even though I was studying a lot, she was the best company. I’m honored she wanted to include me during her special day. I love Spencer and believe they are a perfect partnership. I’m so excited to see what the future holds for them. Let’s party!!"
+      />
       <PartyMemberBio
         name="Isabella Guetta"
         image="/people/isabella-guetta.jpg"
