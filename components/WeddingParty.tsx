@@ -66,7 +66,7 @@ So, I can’t imagine anyone luckier than Spencer right now. I wish Dylan and Sp
       <PartyMemberBio
         name="Greg Ah-Fenne"
         image="/people/greg-ahfenne.jpg"
-        bio="Coming soon"
+        bio="Hello, I’m Greg. I met Spencer almost 8 years ago and my life hasn’t been the same since. In the years that followed, Spencer and I have gone on many adventures, from Palo Alto to Paris, leaving a trail of expensive dinner receipts happy memories in our wake. Spencer is truly one of the most unique people I’ve ever met, and I am incredibly lucky to know him. His capacity for understanding, creative nature, and prodigious intellect makes him not only one of the best people that I know, but also one of the most original. His enthusiasm for the world, and all the things that make it great, is palpable in everything that he thinks, says, or does, and it is impossible to not be inspired by his content, conversation, and character. All these qualities make him a phenomenal human and even better friend, and what I am confident will make him an incredible husband to Dylan. I cannot wait to see what these two get up to together! P.S. Thank you Dylan for the lovely photo :)"
       />
       <PartyMemberBio
         name="JD Remington"
