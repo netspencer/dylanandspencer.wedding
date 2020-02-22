@@ -76,6 +76,7 @@ const NavToggle: FunctionComponent<{
 }> = ({ toggle, hidden }) => (
   <button
     className={classNames(
+      'sm:hidden',
       'focus:outline-none',
       'p-0',
       'hamburger',
