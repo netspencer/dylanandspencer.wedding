@@ -51,7 +51,7 @@ const components = (
     </p>
   ),
   a: ({ children, ...rest }) => (
-    <a {...rest} className={classNames('text-blue-800')}>
+    <a {...rest} target="_blank" className={classNames('text-blue-800')}>
       {children}
     </a>
   ),
