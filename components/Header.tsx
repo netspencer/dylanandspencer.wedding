@@ -74,9 +74,23 @@ const NavToggle: FunctionComponent<{
   toggle: (nextValue?: any) => void
   hidden: boolean
 }> = ({ toggle, hidden }) => (
-  <div className={classNames('block', 'sm:hidden')} onClick={toggle}>
-    {hidden ? 'OFF' : 'ON'}
-  </div>
+  <button
+    className={classNames(
+      'focus:outline-none',
+      'p-0',
+      'hamburger',
+      'hamburger--collapse',
+      {
+        'is-active': !hidden
+      }
+    )}
+    type="button"
+    onClick={toggle}
+  >
+    <span className={classNames('hamburger-box')}>
+      <span className={classNames('hamburger-inner')}></span>
+    </span>
+  </button>
 )
 
 const MobileNav: FunctionComponent<{
@@ -136,7 +150,7 @@ const Header: FunctionComponent<{
           'top-0',
           'w-full',
           'flex',
-          'items-center',
+          'items-baseline',
           'justify-between',
           'p-4',
           'sm:p-8',
