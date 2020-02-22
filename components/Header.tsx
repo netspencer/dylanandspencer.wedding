@@ -18,7 +18,7 @@ const RootNavigationItem: FunctionComponent<{
     >
       <h1
         className={classNames(
-          'fatface',
+          'font-slab',
           'text-3xl',
           'lg:text-4xl',
           'font-bold'
@@ -43,7 +43,7 @@ const NavigationItem: FunctionComponent<{
         onClick={onClick}
         className={classNames(
           'block',
-          'libre',
+          'font-serif',
           'wedding-gray',
           { 'text-xl': mobile },
           { 'lg:text-lg': !mobile },

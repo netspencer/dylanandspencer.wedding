@@ -40,7 +40,7 @@ const Postcard: FunctionComponent = () => {
           >
             <h3
               className={classNames(
-                'fatface',
+                'font-slab',
                 'text-5xl',
                 'lg:text-7xl',
                 'wedding-cream',
@@ -54,7 +54,7 @@ const Postcard: FunctionComponent = () => {
                 'text-xl',
                 'lg:text-2xl',
                 'wedding-cream',
-                'libre'
+                'font-serif'
               )}
             >
               <span className={classNames('block', 'lg:inline')}>
@@ -82,8 +82,8 @@ const Postcard: FunctionComponent = () => {
           'text-center'
         )}
       >
-        <h3 className={classNames('fatface', 'text-3xl')}>May 24, 2020</h3>
-        <p className={classNames('text-l', 'libre', 'leading-normal')}>
+        <h3 className={classNames('font-slab', 'text-3xl')}>May 24, 2020</h3>
+        <p className={classNames('text-l', 'font-serif', 'leading-normal')}>
           Hummingbird Nest Ranch
           <br />
           Simi Valley, CA

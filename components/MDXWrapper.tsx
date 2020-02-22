@@ -14,8 +14,8 @@ const components = (
   h1: ({ children }) => (
     <h1
       className={classNames(
-        { opensans: !useAbril },
-        { fatface: useAbril },
+        { 'font-sans': !useAbril },
+        { 'font-slab': useAbril },
         { 'font-bold': !useAbril },
         { 'text-xl': !useAbril },
         { 'text-2xl': useAbril },
@@ -30,8 +30,8 @@ const components = (
   h2: ({ children }) => (
     <h2
       className={classNames(
-        { opensans: !useAbril },
-        { fatface: useAbril },
+        { 'font-sans': !useAbril },
+        { 'font-slab': useAbril },
         { 'font-bold': !useAbril },
         { 'text-xl': !useAbril },
         { 'text-2xl': useAbril },
@@ -49,6 +49,11 @@ const components = (
     >
       {children}
     </p>
+  ),
+  a: ({ children, ...rest }) => (
+    <a {...rest} className={classNames('text-blue-800')}>
+      {children}
+    </a>
   ),
   p: ({ children }) => (
     <p className={classNames('leading-relaxed', 'md:text-xl', 'my-6')}>
@@ -88,7 +93,9 @@ const MDXWrapper: FunctionComponent<Props> = ({
   centerHeadings,
   children
 }) => (
-  <article className={classNames('libre', 'max-w-3xl', 'md:mx-auto', 'px-8')}>
+  <article
+    className={classNames('font-serif', 'max-w-3xl', 'md:mx-auto', 'px-8')}
+  >
     <MDXProvider
       components={components(useAbril ?? false, centerHeadings ?? false)}
     >
