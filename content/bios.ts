@@ -17,7 +17,7 @@ Quite frankly, Spen, I’m jealous.`
   },
   {
     name: 'Olivia Collins',
-    photo: '/people/olivia-collins.png',
+    photo: '/people/olivia-collins.jpg',
     bio: `My name is Olivia! I met Dylan at a birthday dinner about 5 years ago — we just happened to be placed next to each other at the table! I felt an instant connection with Dylan. We talked all night about everything from astrology to relationships to soulmates, and I felt like I had already known her for years. After meeting Dylan, I knew she was a special soul and that she would be part of my life for a long, long time. I'm so thankful to have a friend like Dylan in my life. She's caring, compassionate, and she cracks me TF up on the daily. She always comes through with the horoscopes when shit doesn't feel right in the universe, and I don't know what I'd do without her. Wishing you and Spencer a lifetime of love and happiness! Love you Dyl! ❤️`
   },
   {

@@ -23,7 +23,7 @@ const Postcard: FunctionComponent = () => {
         }}
       >
         <figure ref={imageRef}>
-          <img src="/photoshoot/12.jpg" alt="Spencer and Dylan in a park" />
+          <img src="/postcard.jpg" alt="Spencer and Dylan in a park" />
           <summary>
             <details ref={shineRef}></details>
           </summary>
