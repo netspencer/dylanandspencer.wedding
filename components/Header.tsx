@@ -151,7 +151,7 @@ const Header: FunctionComponent<{
           'top-0',
           'w-full',
           'flex',
-          'items-baseline',
+          'items-center',
           'justify-between',
           'p-4',
           'sm:p-8',
