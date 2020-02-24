@@ -61,7 +61,11 @@ So, I can’t imagine anyone luckier than Spencer right now. I wish Dylan and Sp
     photo: '/people/evan-cover.jpg',
     bio: `Hey there, I’m Evan. I met Spencer during our time at Tufts. Like all great friendships, we had a ton of fun but also were there for each other when things got tough. Even though Spencer may wear glasses, his perspective and vision of the world is clearer than most. His perspective on all things is unique, refreshing, and energizing. He has introduced me to a whole new frontier of people and thoughts. I’ll forever be grateful for his humor, book recommendations, and love of rotten grapes. I am incredibly excited about the partnership that is Dylan and Spencer - Never before have I seen him so happy and at ease with another person. I cannot wait to see what these two will do together!`
   },
-  { name: 'Sam Madden', bio: 'Coming soon' },
+  {
+    name: 'Sam Madden',
+    photo: '/people/sam-madden.jpg',
+    bio: `Spencer and I first met in college at Tufts in Boston and became fast friends based on our shared interests in technology, art, music and culture. Over the years our friendship has grown thanks to late nights and long conversations about everything and nothing, moving him out of college... twice, and a shared love of coffee and spontaneous adventures. What I have always appreciated the most about Spencer is his willingness to try new things and the thoughtful, creative way he approaches the world. Admittedly, I have only met Dylan once due to the fact that, until recently, I've lived in the Northeast but I am assured of the strength of their bond in the way that Spencer talks about how happy they are together.`
+  },
   {
     name: 'Greg Ah-Fenne',
     photo: '/people/greg-ahfenne.jpg',
