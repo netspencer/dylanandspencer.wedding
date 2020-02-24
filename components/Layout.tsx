@@ -44,7 +44,8 @@ const Layout: FunctionComponent<Props> = ({ children, className }) => {
   const { pathname } = useRouter()
   useEffect(() => {
     if (ga) {
-      ga('send', 'pageview', pathname)
+      ga('set', 'page', pathname)
+      ga('send', 'pageview')
     }
   }, [pathname])
 
