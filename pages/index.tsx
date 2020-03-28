@@ -9,7 +9,7 @@ const IndexPage: NextPage = () => {
   return (
     <>
       <Layout>
-        <NextSeo title="May 24, 2020" />
+        <NextSeo title="August 30, 2020" />
         <Postcard />
       </Layout>
       <style jsx global>{`
