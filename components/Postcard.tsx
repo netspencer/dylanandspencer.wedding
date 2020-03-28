@@ -47,7 +47,7 @@ const Postcard: FunctionComponent = () => {
                 'font-normal'
               )}
             >
-              May 24, 2020
+              August 30, 2020
             </h3>
             <p
               className={classNames(
@@ -82,7 +82,7 @@ const Postcard: FunctionComponent = () => {
           'text-center'
         )}
       >
-        <h3 className={classNames('font-slab', 'text-3xl')}>May 24, 2020</h3>
+        <h3 className={classNames('font-slab', 'text-3xl')}>August 30, 2020</h3>
         <p className={classNames('text-l', 'font-serif', 'leading-normal')}>
           Hummingbird Nest Ranch
           <br />
