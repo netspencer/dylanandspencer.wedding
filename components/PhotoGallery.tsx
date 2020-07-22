@@ -22,7 +22,7 @@ const PhotoGallery: FunctionComponent = () => {
     <div>
       <Gallery
         direction="row"
-        targetRowHeight={containerWidth => {
+        targetRowHeight={(containerWidth) => {
           if (containerWidth > 1280) {
             return 500
           } else if (containerWidth > 768) {
@@ -38,8 +38,9 @@ const PhotoGallery: FunctionComponent = () => {
           <Modal onClose={closeLightbox}>
             <Carousel
               currentIndex={currentImage}
-              views={photos.map(x => ({
-                ...x
+              // @ts-ignore
+              views={photos.map((x) => ({
+                ...x,
               }))}
             />
           </Modal>
